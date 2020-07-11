@@ -11,199 +11,177 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 1017.0
 margin_bottom = 593.0
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
-margin_right = 26.0
-margin_bottom = 586.0
+[node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1010.0
+margin_bottom = 53.0
+grow_horizontal = 2
 
-[node name="Grid" type="GridContainer" parent="HBoxContainer/MarginContainer"]
-margin_right = 26.0
-margin_bottom = 586.0
-columns = 20
+[node name="_NextBlock" type="Label" parent="VBoxContainer/TopBar"]
+margin_top = 19.0
+margin_right = 69.0
+margin_bottom = 33.0
+text = "Next Block"
 
-[node name="Cell" type="TextureRect" parent="HBoxContainer/MarginContainer/Grid"]
+[node name="NextBlock" type="GridContainer" parent="VBoxContainer/TopBar"]
+margin_left = 73.0
+margin_right = 126.0
+margin_bottom = 53.0
+custom_constants/vseparation = 1
+custom_constants/hseparation = 1
+columns = 2
+
+[node name="Cell" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
 margin_right = 26.0
 margin_bottom = 26.0
 texture = ExtResource( 1 )
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+[node name="Cell2" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
+margin_left = 27.0
+margin_right = 53.0
+margin_bottom = 26.0
+texture = ExtResource( 1 )
+
+[node name="Cell3" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
+margin_top = 27.0
+margin_right = 26.0
+margin_bottom = 53.0
+texture = ExtResource( 1 )
+
+[node name="Cell4" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
+margin_left = 27.0
+margin_top = 27.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 1 )
+
+[node name="GameSpace" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 57.0
+margin_right = 1010.0
+margin_bottom = 283.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GameSpace"]
+margin_right = 26.0
+margin_bottom = 226.0
+
+[node name="Grid" type="GridContainer" parent="VBoxContainer/GameSpace/MarginContainer"]
+margin_right = 26.0
+margin_bottom = 226.0
+columns = 20
+
+[node name="Cell" type="TextureRect" parent="VBoxContainer/GameSpace/MarginContainer/Grid"]
+margin_right = 26.0
+margin_bottom = 26.0
+texture = ExtResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/GameSpace"]
 margin_left = 30.0
 margin_right = 1010.0
-margin_bottom = 586.0
+margin_bottom = 226.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CenterContainer"]
-margin_left = 406.0
-margin_top = 121.0
-margin_right = 573.0
-margin_bottom = 464.0
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GameSpace/CenterContainer"]
+margin_left = 419.0
+margin_right = 561.0
+margin_bottom = 226.0
 custom_constants/separation = 9
 
-[node name="Stats" type="GridContainer" parent="HBoxContainer/CenterContainer/VBoxContainer"]
-margin_right = 167.0
-margin_bottom = 227.0
+[node name="Stats" type="GridContainer" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_right = 142.0
+margin_bottom = 110.0
 custom_constants/vseparation = 10
 custom_constants/hseparation = 20
 columns = 2
 
-[node name="_MainProgress " type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="_MainProgress " type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_right = 94.0
 margin_bottom = 14.0
 text = "Main Progress:"
 
-[node name="MainProgress" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="MainProgress" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
-margin_right = 167.0
+margin_right = 142.0
 margin_bottom = 14.0
 text = "50%"
 
-[node name="_Element1" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="_Element1" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_top = 24.0
 margin_right = 94.0
 margin_bottom = 38.0
 text = "Element I:"
 
-[node name="Element1" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="Element1" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
 margin_top = 24.0
-margin_right = 167.0
+margin_right = 142.0
 margin_bottom = 38.0
 text = "23%"
 
-[node name="_Element2" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="_Element2" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_top = 48.0
 margin_right = 94.0
 margin_bottom = 62.0
 text = "Element II:"
 
-[node name="Element 2" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="Element 2" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
 margin_top = 48.0
-margin_right = 167.0
+margin_right = 142.0
 margin_bottom = 62.0
 text = "62%"
 
-[node name="_Element3" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="_Element3" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_top = 72.0
 margin_right = 94.0
 margin_bottom = 86.0
 text = "Element III:"
 
-[node name="Element3" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="Element3" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
 margin_top = 72.0
-margin_right = 167.0
+margin_right = 142.0
 margin_bottom = 86.0
 text = "80%"
 
-[node name="_Element4" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="_Element4" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_top = 96.0
 margin_right = 94.0
 margin_bottom = 110.0
 text = "Element IV:"
 
-[node name="Element4" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
+[node name="Element4" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
 margin_top = 96.0
-margin_right = 167.0
+margin_right = 142.0
 margin_bottom = 110.0
 text = "20%"
 
-[node name="_NextBlock" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
-margin_top = 166.0
-margin_right = 94.0
-margin_bottom = 180.0
-text = "Next Block"
-
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_top = 120.0
-margin_right = 167.0
-margin_bottom = 227.0
-
-[node name="NextBlock" type="GridContainer" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats/CenterContainer"]
-margin_right = 53.0
-margin_bottom = 107.0
-custom_constants/vseparation = 1
-custom_constants/hseparation = 1
-columns = 2
-
-[node name="Cell" type="TextureRect" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats/CenterContainer/NextBlock"]
-margin_right = 26.0
-margin_bottom = 26.0
-texture = ExtResource( 1 )
-
-[node name="Cell2" type="TextureRect" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats/CenterContainer/NextBlock"]
-margin_left = 27.0
-margin_right = 53.0
-margin_bottom = 26.0
-texture = ExtResource( 1 )
-
-[node name="Cell3" type="TextureRect" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats/CenterContainer/NextBlock"]
-margin_top = 27.0
-margin_right = 26.0
-margin_bottom = 53.0
-texture = ExtResource( 1 )
-
-[node name="Cell4" type="TextureRect" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats/CenterContainer/NextBlock"]
-margin_left = 27.0
-margin_top = 27.0
-margin_right = 53.0
-margin_bottom = 53.0
-texture = ExtResource( 1 )
-
-[node name="Cell5" type="TextureRect" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats/CenterContainer/NextBlock"]
-margin_top = 54.0
-margin_right = 26.0
-margin_bottom = 80.0
-texture = ExtResource( 1 )
-
-[node name="Cell6" type="TextureRect" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats/CenterContainer/NextBlock"]
-margin_left = 27.0
-margin_top = 54.0
-margin_right = 53.0
-margin_bottom = 80.0
-texture = ExtResource( 1 )
-
-[node name="Cell7" type="TextureRect" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats/CenterContainer/NextBlock"]
-margin_top = 81.0
-margin_right = 26.0
-margin_bottom = 107.0
-texture = ExtResource( 1 )
-
-[node name="Cell8" type="TextureRect" parent="HBoxContainer/CenterContainer/VBoxContainer/Stats/CenterContainer/NextBlock"]
-margin_left = 27.0
-margin_top = 81.0
-margin_right = 53.0
-margin_bottom = 107.0
-texture = ExtResource( 1 )
-
-[node name="NewGame" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 236.0
-margin_right = 167.0
-margin_bottom = 256.0
+[node name="NewGame" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 119.0
+margin_right = 142.0
+margin_bottom = 139.0
 text = "New Game"
 
-[node name="PauseToggle" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 265.0
-margin_right = 167.0
-margin_bottom = 285.0
+[node name="PauseToggle" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 148.0
+margin_right = 142.0
+margin_bottom = 168.0
 text = "Pause"
 
-[node name="MusicToggle" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 294.0
-margin_right = 167.0
-margin_bottom = 314.0
+[node name="MusicToggle" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 177.0
+margin_right = 142.0
+margin_bottom = 197.0
 text = "Music On/Off"
 
-[node name="About" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 323.0
-margin_right = 167.0
-margin_bottom = 343.0
+[node name="About" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 206.0
+margin_right = 142.0
+margin_bottom = 226.0
 text = "About"
