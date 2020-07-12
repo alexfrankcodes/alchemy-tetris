@@ -185,3 +185,17 @@ margin_top = 206.0
 margin_right = 142.0
 margin_bottom = 226.0
 text = "About"
+
+[node name="AboutBox" type="AcceptDialog" parent="."]
+margin_left = 758.0
+margin_top = 421.0
+margin_right = 841.0
+margin_bottom = 479.0
+window_title = "About Game"
+dialog_text = "This is a game made for My First Game Jam 2020: Summer Edition.
+
+Controls:"
+[connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_button_down"]
+[connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/PauseToggle" to="." method="_on_PauseToggle_button_down"]
+[connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/MusicToggle" to="." method="_on_MusicToggle_button_down"]
+[connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/About" to="." method="_on_About_button_down"]
