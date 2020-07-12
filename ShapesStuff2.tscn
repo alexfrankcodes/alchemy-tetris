@@ -13,257 +13,270 @@ __meta__ = {
 }
 
 [node name="Dots" type="GridContainer" parent="Shapes"]
-margin_right = 296.0
-margin_bottom = 26.0
+margin_right = 267.0
+margin_bottom = 32.0
+custom_constants/hseparation = 15
 columns = 4
 
 [node name="dot2" type="GridContainer" parent="Shapes/Dots"]
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 
 [node name="TextureRect" type="TextureRect" parent="Shapes/Dots/dot2"]
 modulate = Color( 1, 0, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
 [node name="dot3" type="GridContainer" parent="Shapes/Dots"]
 modulate = Color( 1, 1, 0, 1 )
-margin_left = 30.0
-margin_right = 56.0
-margin_bottom = 26.0
+margin_left = 47.0
+margin_right = 79.0
+margin_bottom = 32.0
 
 [node name="TextureRect" type="TextureRect" parent="Shapes/Dots/dot3"]
 modulate = Color( 1, 1, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
 [node name="dot4" type="GridContainer" parent="Shapes/Dots"]
 modulate = Color( 0, 0.607843, 0, 1 )
-margin_left = 60.0
-margin_right = 86.0
-margin_bottom = 26.0
+margin_left = 94.0
+margin_right = 126.0
+margin_bottom = 32.0
 
 [node name="TextureRect" type="TextureRect" parent="Shapes/Dots/dot4"]
 modulate = Color( 1, 1, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
 [node name="dot1" type="GridContainer" parent="Shapes/Dots"]
-margin_left = 90.0
-margin_right = 116.0
-margin_bottom = 26.0
+margin_left = 141.0
+margin_right = 173.0
+margin_bottom = 32.0
 
 [node name="TextureRect2" type="TextureRect" parent="Shapes/Dots/dot1"]
 modulate = Color( 0.164706, 0.172549, 1, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
 [node name="Dominos" type="GridContainer" parent="Shapes"]
-margin_top = 36.0
-margin_right = 296.0
-margin_bottom = 92.0
-columns = 4
+margin_top = 42.0
+margin_right = 267.0
+margin_bottom = 182.0
 
 [node name="Solid Color" type="GridContainer" parent="Shapes/Dominos"]
-margin_right = 116.0
-margin_bottom = 56.0
+margin_right = 267.0
+margin_bottom = 68.0
+custom_constants/hseparation = 15
 columns = 4
 
 [node name="domino red" type="GridContainer" parent="Shapes/Dominos/Solid Color"]
-margin_right = 26.0
-margin_bottom = 56.0
+margin_right = 32.0
+margin_bottom = 68.0
 
 [node name="TextureRect" type="TextureRect" parent="Shapes/Dominos/Solid Color/domino red"]
 modulate = Color( 1, 0, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 22.0
 texture = ExtResource( 1 )
 
 [node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/Solid Color/domino red"]
 modulate = Color( 1, 0, 0, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 68.0
 texture = ExtResource( 1 )
 
 [node name="domino yellow" type="GridContainer" parent="Shapes/Dominos/Solid Color"]
-margin_left = 30.0
-margin_right = 56.0
-margin_bottom = 56.0
+margin_left = 47.0
+margin_right = 79.0
+margin_bottom = 68.0
 
 [node name="TextureRect" type="TextureRect" parent="Shapes/Dominos/Solid Color/domino yellow"]
 modulate = Color( 1, 1, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
 [node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/Solid Color/domino yellow"]
 modulate = Color( 1, 1, 0, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 68.0
 texture = ExtResource( 1 )
 
 [node name="domino green" type="GridContainer" parent="Shapes/Dominos/Solid Color"]
 modulate = Color( 0, 0.607843, 0, 1 )
-margin_left = 60.0
-margin_right = 86.0
-margin_bottom = 56.0
+margin_left = 94.0
+margin_right = 126.0
+margin_bottom = 68.0
 
 [node name="TextureRect" type="TextureRect" parent="Shapes/Dominos/Solid Color/domino green"]
 modulate = Color( 1, 1, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
 [node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/Solid Color/domino green"]
 modulate = Color( 1, 1, 0, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 68.0
 texture = ExtResource( 1 )
 
 [node name="domino blue" type="GridContainer" parent="Shapes/Dominos/Solid Color"]
-margin_left = 90.0
-margin_right = 116.0
-margin_bottom = 56.0
+margin_left = 141.0
+margin_right = 173.0
+margin_bottom = 68.0
 
 [node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/Solid Color/domino blue"]
 modulate = Color( 0.164706, 0.172549, 1, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
 [node name="TextureRect3" type="TextureRect" parent="Shapes/Dominos/Solid Color/domino blue"]
 modulate = Color( 0.164706, 0.172549, 1, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 68.0
 texture = ExtResource( 1 )
 
-[node name="Mixed Color1" type="GridContainer" parent="Shapes/Dominos"]
-margin_left = 120.0
-margin_right = 176.0
-margin_bottom = 56.0
+[node name="MixedColors" type="GridContainer" parent="Shapes/Dominos"]
+margin_top = 72.0
+margin_right = 267.0
+margin_bottom = 140.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 15
+columns = 3
+
+[node name="Mixed Color1" type="GridContainer" parent="Shapes/Dominos/MixedColors"]
+margin_right = 79.0
+margin_bottom = 68.0
+custom_constants/hseparation = 15
 columns = 4
 
-[node name="domino RY1" type="GridContainer" parent="Shapes/Dominos/Mixed Color1"]
-margin_right = 26.0
-margin_bottom = 56.0
+[node name="domino RY1" type="GridContainer" parent="Shapes/Dominos/MixedColors/Mixed Color1"]
+margin_right = 32.0
+margin_bottom = 68.0
 
-[node name="TextureRect" type="TextureRect" parent="Shapes/Dominos/Mixed Color1/domino RY1"]
+[node name="TextureRect" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color1/domino RY1"]
 modulate = Color( 1, 1, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
-[node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/Mixed Color1/domino RY1"]
+[node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color1/domino RY1"]
 modulate = Color( 1, 0, 0, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
 texture = ExtResource( 1 )
 
-[node name="domino BY" type="GridContainer" parent="Shapes/Dominos/Mixed Color1"]
-margin_left = 30.0
-margin_right = 56.0
-margin_bottom = 56.0
+[node name="domino BY" type="GridContainer" parent="Shapes/Dominos/MixedColors/Mixed Color1"]
+margin_left = 47.0
+margin_right = 79.0
+margin_bottom = 68.0
 
-[node name="TextureRect3" type="TextureRect" parent="Shapes/Dominos/Mixed Color1/domino BY"]
+[node name="TextureRect3" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color1/domino BY"]
 modulate = Color( 0.0509804, 0.152941, 1, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
-[node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/Mixed Color1/domino BY"]
+[node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color1/domino BY"]
 modulate = Color( 1, 1, 0, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+anchor_left = 0.0139203
+anchor_right = 0.0139203
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
 texture = ExtResource( 1 )
 
-[node name="Mixed Color2" type="GridContainer" parent="Shapes/Dominos"]
-margin_left = 180.0
-margin_right = 236.0
-margin_bottom = 56.0
+[node name="Mixed Color2" type="GridContainer" parent="Shapes/Dominos/MixedColors"]
+margin_left = 94.0
+margin_right = 173.0
+margin_bottom = 68.0
+custom_constants/hseparation = 15
 columns = 4
 
-[node name="domino YG1" type="GridContainer" parent="Shapes/Dominos/Mixed Color2"]
-margin_right = 26.0
-margin_bottom = 56.0
+[node name="domino YG1" type="GridContainer" parent="Shapes/Dominos/MixedColors/Mixed Color2"]
+margin_right = 32.0
+margin_bottom = 68.0
 
-[node name="TextureRect" type="TextureRect" parent="Shapes/Dominos/Mixed Color2/domino YG1"]
+[node name="TextureRect" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color2/domino YG1"]
 modulate = Color( 1, 1, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
-[node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/Mixed Color2/domino YG1"]
+[node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color2/domino YG1"]
 modulate = Color( 0, 0.635294, 0, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
 texture = ExtResource( 1 )
 
-[node name="domino BR" type="GridContainer" parent="Shapes/Dominos/Mixed Color2"]
-margin_left = 30.0
-margin_right = 56.0
-margin_bottom = 56.0
+[node name="domino BR" type="GridContainer" parent="Shapes/Dominos/MixedColors/Mixed Color2"]
+margin_left = 47.0
+margin_right = 79.0
+margin_bottom = 68.0
 
-[node name="TextureRect3" type="TextureRect" parent="Shapes/Dominos/Mixed Color2/domino BR"]
+[node name="TextureRect3" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color2/domino BR"]
 modulate = Color( 0.0509804, 0.152941, 1, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
-[node name="TextureRect4" type="TextureRect" parent="Shapes/Dominos/Mixed Color2/domino BR"]
+[node name="TextureRect4" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color2/domino BR"]
 modulate = Color( 1, 0, 0, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
 texture = ExtResource( 1 )
 
-[node name="Mixed Color3" type="GridContainer" parent="Shapes/Dominos"]
-margin_left = 240.0
-margin_right = 296.0
-margin_bottom = 56.0
+[node name="Mixed Color3" type="GridContainer" parent="Shapes/Dominos/MixedColors"]
+margin_left = 188.0
+margin_right = 267.0
+margin_bottom = 68.0
+custom_constants/hseparation = 15
 columns = 4
 
-[node name="domino YG1" type="GridContainer" parent="Shapes/Dominos/Mixed Color3"]
-margin_right = 26.0
-margin_bottom = 56.0
+[node name="domino YG1" type="GridContainer" parent="Shapes/Dominos/MixedColors/Mixed Color3"]
+margin_right = 32.0
+margin_bottom = 68.0
 
-[node name="TextureRect3" type="TextureRect" parent="Shapes/Dominos/Mixed Color3/domino YG1"]
+[node name="TextureRect3" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color3/domino YG1"]
 modulate = Color( 1, 0, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
-[node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/Mixed Color3/domino YG1"]
+[node name="TextureRect2" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color3/domino YG1"]
 modulate = Color( 0, 0.635294, 0, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
 texture = ExtResource( 1 )
 
-[node name="domino RB2" type="GridContainer" parent="Shapes/Dominos/Mixed Color3"]
-margin_left = 30.0
-margin_right = 56.0
-margin_bottom = 56.0
+[node name="domino RB2" type="GridContainer" parent="Shapes/Dominos/MixedColors/Mixed Color3"]
+margin_left = 47.0
+margin_right = 79.0
+margin_bottom = 68.0
 
-[node name="TextureRect7" type="TextureRect" parent="Shapes/Dominos/Mixed Color3/domino RB2"]
+[node name="TextureRect7" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color3/domino RB2"]
 modulate = Color( 0, 0.635294, 0, 1 )
-margin_right = 26.0
-margin_bottom = 26.0
+margin_right = 32.0
+margin_bottom = 32.0
 texture = ExtResource( 1 )
 
-[node name="TextureRect3" type="TextureRect" parent="Shapes/Dominos/Mixed Color3/domino RB2"]
+[node name="TextureRect3" type="TextureRect" parent="Shapes/Dominos/MixedColors/Mixed Color3/domino RB2"]
 modulate = Color( 0.164706, 0.172549, 1, 1 )
-margin_top = 30.0
-margin_right = 26.0
-margin_bottom = 56.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
 texture = ExtResource( 1 )

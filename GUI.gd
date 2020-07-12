@@ -1,4 +1,4 @@
-extends PanelContainer
+extends CenterContainer
 
 const CELL_BG1 = Color(0.1, 0.1, 0.1)
 
