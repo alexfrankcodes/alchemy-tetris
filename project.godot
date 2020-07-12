@@ -19,6 +19,12 @@ config/name="AlchemyTetris"
 run/main_scene="res://GUI.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1600
+window/size/height=900
+window/size/resizable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
