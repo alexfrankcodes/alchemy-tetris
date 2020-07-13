@@ -4,7 +4,7 @@ var shape: ShapeData
 
 func _on_PickShape_button_down():
 	shape = Shapes.get_shape()
-	$Shape.text = shape.name
+	$ShapeName.text = shape.name
 	_show_grid()
 
 
