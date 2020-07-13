@@ -18,6 +18,7 @@ margin_top = 268.0
 margin_right = 918.0
 margin_bottom = 632.0
 
+
 [node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 236.0
 margin_bottom = 65.0
@@ -73,6 +74,7 @@ margin_bottom = 295.0
 [node name="Grid" type="GridContainer" parent="VBoxContainer/GameSpace/MarginContainer"]
 margin_right = 32.0
 margin_bottom = 295.0
+
 columns = 20
 
 [node name="Cell" type="TextureRect" parent="VBoxContainer/GameSpace/MarginContainer/Grid"]
