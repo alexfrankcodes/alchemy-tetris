@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Test.gd" type="Script" id=1]
+
+[node name="Test" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shape" type="Label" parent="."]
+margin_left = 184.0
+margin_top = 32.0
+margin_right = 240.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="Label" parent="."]
+margin_left = 168.0
+margin_top = 104.0
+margin_right = 240.0
+margin_bottom = 152.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PickShape" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 88.0
+margin_right = 96.0
+margin_bottom = 108.0
+text = "Pick Shape"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RLeft" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 128.0
+margin_right = 97.0
+margin_bottom = 148.0
+text = "Rotate Left"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RRight" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 168.0
+margin_right = 105.0
+margin_bottom = 188.0
+text = "Rotate Right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="PickShape" to="." method="_on_PickShape_button_down"]
+[connection signal="button_down" from="RLeft" to="." method="_on_RLeft_button_down"]
+[connection signal="button_down" from="RRight" to="." method="_on_RRight_button_down"]

@@ -12,7 +12,7 @@ func get_shape() -> ShapeData:
 	_index -= 1
 	var s = ShapeData.new()
 	s.name = _shapes[_index].name
-	# s.color = _shapes[_index].color 
+	s.color = _shapes[_index].color 
 	#Color is provided in the name and some shapes have mutilple colors so if I find something thet relies on 
 	#this we will need to find another solution.
 	s.coors = _shapes[_index].coors
@@ -25,7 +25,7 @@ func _ready():
 	for shape in get_children():
 		var data = ShapeData.new()
 		data.name = shape.name
-		#data.color = shape.modulate
+		data.color = shape.modulate
 		#I anticipate we will need a function which will tally up the number of cells of each color on each row of the shape.
 		#For the row clearing function.
 		
@@ -37,8 +37,22 @@ func _ready():
 		if size % 2 ==0:
 			data.coors.remove(s2)
 		print(data.coors) # For testing
-		data.grid = get_grid(size, shape.get_children())
+		data.grid = _get_grid(size, shape.get_children())
+		_shapes.append(data)
 		
+
+func _get_grid(n, cells):
+	var grid = []
+	var row = []
+	var i = 0
+	for cell in cells:
+		row.append(cell.modulate.a > 0.1)
+		i += 1
+		if i == n:
+			grid.append(row)
+			i = 0
+			row = []
+	return grid
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
