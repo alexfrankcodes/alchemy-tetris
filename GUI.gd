@@ -4,6 +4,8 @@ const CELL_BG1 = Color(0.1, 0.1, 0.1)
 
 var grid
 var next
+var music setget _music_set, _music_get
+var sound setget _sound_set, _sound_get
 
 signal button_pressed(button_name)
 
@@ -48,12 +50,25 @@ func set_button_text(button, text):
 func set_button_states(playing):
 	set_button_state("NewGame", playing)
 	set_button_state("About", playing)
-	set_button_state("Pause", !playing)
+	set_button_state("PauseToggle", !playing)
 
+
+func _music_set(value):
+	find_node("Music").set_pressed(value)
+
+func _music_get():
+	return find_node("MusicToggle").is_pressed()
+
+func _sound_set(value):
+	find_node("Sound").set_pressed(value)
+
+func _sound_get():
+	return find_node("SoundToggle").is_pressed()
+	
 
 # TODO: Handle button presses
 func _on_NewGame_button_down():
-	emit_signal("button_pressed", "New Game")
+	emit_signal("button_pressed", "NewGame")
 
 func _on_PauseToggle_button_down():
 	emit_signal("button_pressed", "Pause")
@@ -66,6 +81,7 @@ func _on_SoundToggle_pressed():
 	emit_signal("button_pressed", "Sound")
 
 func _on_MusicToggle_pressed():
+	music = true
 	emit_signal("button_pressed", "Music")
 
 
