@@ -1,7 +1,5 @@
 extends CenterContainer
 
-const CELL_BG1 = Color(0.1, 0.1, 0.1)
-
 var grid
 var next
 var music setget _music_set, _music_get
@@ -17,7 +15,7 @@ func _ready():
 	generate_cells(grid, 400)
 	
 	# Set cells to empty color
-	clear_cells(grid, CELL_BG1)	
+	clear_cells(grid)	
 
 # Generate cells for grid
 func generate_cells(node, n):
@@ -31,11 +29,11 @@ func generate_cells(node, n):
 		num_cells += 1
 
 # Clear cells
-func clear_cells(node, color):
+func clear_cells(node):
 	
 	# Loop through cells and set color
 	for cell in node.get_children():
-		cell.modulate = color
+		cell.modulate = Color(0)
 
 
 # Methods to change button
