@@ -14,8 +14,8 @@ func _ready():
 	# Set up playspace grid
 	generate_cells(grid, 400)
 	
-	# Set cells to empty color
-	clear_cells(grid)	
+	# Clear cells
+	clear_all_cells()
 
 # Generate cells for grid
 func generate_cells(node, n):
@@ -34,6 +34,11 @@ func clear_cells(node):
 	# Loop through cells and set color
 	for cell in node.get_children():
 		cell.modulate = Color(0)
+		
+
+func clear_all_cells():
+	clear_cells(grid)	
+	clear_cells(next)
 
 
 # Methods to change button

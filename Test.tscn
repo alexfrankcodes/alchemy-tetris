@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Test.gd" type="Script" id=1]
+[ext_resource path="res://Main.tscn" type="PackedScene" id=2]
 
 [node name="Test" type="Control"]
 anchor_right = 1.0
@@ -9,6 +10,12 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Main" parent="." instance=ExtResource( 2 )]
+margin_left = 368.0
+margin_top = 168.0
+margin_right = 1256.0
+margin_bottom = 712.0
 
 [node name="ShapeName" type="Label" parent="."]
 margin_left = 16.0
@@ -59,6 +66,56 @@ text = "Rotate Right"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PlaceShape" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 312.0
+margin_right = 113.0
+margin_bottom = 332.0
+text = "Place Shape"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddShapeToGrid" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 256.0
+margin_right = 121.0
+margin_bottom = 276.0
+text = "Add to Grid"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemoveShapeFromGrid" type="Button" parent="."]
+margin_left = 152.0
+margin_top = 256.0
+margin_right = 240.0
+margin_bottom = 276.0
+text = "Remove Shape"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lock" type="Button" parent="."]
+margin_left = 168.0
+margin_top = 296.0
+margin_right = 232.0
+margin_bottom = 316.0
+text = "Lock"
+
+[node name="SpinBox" type="SpinBox" parent="."]
+margin_left = 168.0
+margin_top = 408.0
+margin_right = 242.0
+margin_bottom = 432.0
+min_value = -10.0
+max_value = 410.0
+value = 35.0
 [connection signal="button_down" from="PickShape" to="." method="_on_PickShape_button_down"]
 [connection signal="button_down" from="RLeft" to="." method="_on_RLeft_button_down"]
 [connection signal="button_down" from="RRight" to="." method="_on_RRight_button_down"]
+[connection signal="button_down" from="PlaceShape" to="." method="_on_PlaceShape_button_down"]
+[connection signal="button_down" from="AddShapeToGrid" to="." method="_on_AddShapeToGrid_button_down"]
+[connection signal="button_down" from="RemoveShapeFromGrid" to="." method="_on_RemoveShapeFromGrid_button_down"]
+[connection signal="button_down" from="Lock" to="." method="_on_Lock_button_down"]
