@@ -15,9 +15,7 @@ func _ready():
 	generate_cells(grid, 400)
 	
 	# Set cells to empty color
-	clear_cells(grid, CELL_BG1)
-	
-	pass	
+	clear_cells(grid, CELL_BG1)	
 
 # Generate cells for grid
 func generate_cells(node, n):
@@ -29,8 +27,6 @@ func generate_cells(node, n):
 	while num_cells < n:
 		node.add_child(node.get_child(0).duplicate())
 		num_cells += 1
-		
-	pass
 
 # Clear cells
 func clear_cells(node, color):
@@ -38,26 +34,42 @@ func clear_cells(node, color):
 	# Loop through cells and set color
 	for cell in node.get_children():
 		cell.modulate = color
-		
-	pass
+
+
+# Methods to change button
+func set_button_state(button, state):
+	find_node(button).set_disabled(state)
+	
+func set_button_text(button, text):
+	find_node(button).set_text(text)
+
+
+# Handle button states
+func set_button_states(playing):
+	set_button_state("NewGame", playing)
+	set_button_state("About", playing)
+	set_button_state("Pause", !playing)
 
 
 # TODO: Handle button presses
 func _on_NewGame_button_down():
 	emit_signal("button_pressed", "New Game")
-	pass # Replace with function body.
-
 
 func _on_PauseToggle_button_down():
 	emit_signal("button_pressed", "Pause")
-	pass # Replace with function body.
-
-
-func _on_MusicToggle_button_down():
-	emit_signal("button_pressed", "Music")
-	pass # Replace with function body.
 
 func _on_About_button_down():
 	$AboutBox.popup_centered()
 	emit_signal("button_pressed", "About")
-	pass # Replace with function body.
+
+func _on_SoundToggle_pressed():
+	emit_signal("button_pressed", "Sound")
+
+func _on_MusicToggle_pressed():
+	emit_signal("button_pressed", "Music")
+
+
+func _on_AboutBox_popup_hide():
+	set_button_state("About", false)
+
+
