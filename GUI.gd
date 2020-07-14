@@ -69,6 +69,17 @@ func _sound_get():
 	return find_node("SoundToggle").is_pressed()
 	
 
+# Preview Next shape:
+func set_next_shape(shape: ShapeData):
+	clear_cells(next)
+	var i = 0
+	for col in shape.coors.size():
+		for row in [0, 1]:
+			if shape.grid[row][col]:
+				next.get_child(i).modulate = shape.color
+			i += 1
+
+
 # TODO: Handle button presses
 func _on_NewGame_button_down():
 	emit_signal("button_pressed", "NewGame")

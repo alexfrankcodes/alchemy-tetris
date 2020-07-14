@@ -21,3 +21,13 @@ margin_left = 682.0
 margin_top = 266.0
 margin_right = 918.0
 margin_bottom = 630.0
+
+[node name="Ticker" type="Timer" parent="."]
+pause_mode = 2
+
+[node name="LeftTimer" type="Timer" parent="."]
+
+[node name="RightTimer" type="Timer" parent="."]
+[connection signal="timeout" from="Ticker" to="." method="_on_Ticker_timeout"]
+[connection signal="timeout" from="LeftTimer" to="." method="_on_LeftTimer_timeout"]
+[connection signal="timeout" from="RightTimer" to="." method="_on_RightTimer_timeout"]
