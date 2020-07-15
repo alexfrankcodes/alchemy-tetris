@@ -4,7 +4,9 @@
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
 
 [node name="Main" type="CenterContainer"]
-margin_right = 1600.0
+pause_mode = 2
+margin_left = 1.05945
+margin_right = 1601.06
 margin_bottom = 896.0
 script = ExtResource( 1 )
 __meta__ = {
@@ -23,7 +25,7 @@ margin_right = 918.0
 margin_bottom = 726.0
 
 [node name="Ticker" type="Timer" parent="."]
-pause_mode = 2
+pause_mode = 1
 
 [node name="LeftTimer" type="Timer" parent="."]
 

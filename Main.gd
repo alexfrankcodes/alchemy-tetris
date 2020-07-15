@@ -129,7 +129,7 @@ func _button_pressed(button_name):
 			if state == PLAYING:
 				gui.set_button_text("Pause", "Resume")
 				state = PAUSED
-				pause() 
+				pause(true) 
 				if _music_is_on():
 					_music(PAUSE)
 			else:
