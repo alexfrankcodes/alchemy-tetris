@@ -1,73 +1,84 @@
 extends CenterContainer
 
+
 var grid
 var next
-var music setget _music_set, _music_get
-var sound setget _sound_set, _sound_get
+
+# Music/Sound
+var music = 0
+var sound = 0
+var min_vol
+
+# Level/Scoring
+var level = 1 setget set_level
+var score = 0 setget set_score
+var high_score = 0 setget set_high_score
+var lines = 0 setget set_lines
 
 signal button_pressed(button_name)
 
+###################### SETUP ######################
 func _ready():
 	grid = find_node("Grid")
 	next = find_node("NextBlock")
-	
-	# Set up playspace grid
+	min_vol = find_node("Music").get_min()
+	find_node("Sound").set_min(min_vol)
 	generate_cells(grid, 400)
-	
-	# Clear cells
 	clear_all_cells()
 
-# Generate cells for grid
 func generate_cells(node, n):
-	
-	# Get number of existing cells
 	var num_cells = node.get_child_count()
-	
-	# Fill in cells up to n
 	while num_cells < n:
 		node.add_child(node.get_child(0).duplicate())
 		num_cells += 1
 
-# Clear cells
 func clear_cells(node):
-	
-	# Loop through cells and set color
 	for cell in node.get_children():
 		cell.modulate = Color(0)
-		
 
 func clear_all_cells():
 	clear_cells(grid)	
 	clear_cells(next)
 
+###################### GAME STATE ######################
+func set_level(value):
+	find_node("Level").text = str(value)
+	level = value
 
-# Methods to change button
+func set_score(value):
+	find_node("Score").text = str(value)
+	score = value
+
+func set_high_score(value):
+	find_node("HighScore").text = "%08d" % value
+	high_score = value
+
+func set_lines(value):
+	find_node("Lines").text = str(value)
+	lines = value
+
+func reset_stats(_high_score = 0, _score = 0, _lines = 0, _level = 1):
+	self.high_score = _high_score
+	self.score = _score
+	self.lines = _lines
+	self.level = _level
+
+func settings(data):
+	self.high_score = data.high_score
+	find_node("Music").value = data.music
+	find_node("Sound").value = data.sound
+
+###################### BUTTON MUTATORS ######################
 func set_button_state(button, state):
 	find_node(button).set_disabled(state)
 	
 func set_button_text(button, text):
 	find_node(button).set_text(text)
 
-
-# Handle button states
 func set_button_states(playing):
 	set_button_state("NewGame", playing)
 	set_button_state("About", playing)
-	set_button_state("PauseToggle", !playing)
-
-
-func _music_set(value):
-	find_node("Music").set_pressed(value)
-
-func _music_get():
-	return find_node("MusicToggle").is_pressed()
-
-func _sound_set(value):
-	find_node("Sound").set_pressed(value)
-
-func _sound_get():
-	return find_node("SoundToggle").is_pressed()
-	
+	set_button_state("Pause", !playing)
 
 # Preview Next shape:
 func set_next_shape(shape: ShapeData):
@@ -79,13 +90,9 @@ func set_next_shape(shape: ShapeData):
 				next.get_child(i).modulate = shape.color
 			i += 1
 
-
-# TODO: Handle button presses
+###################### SIGNALS ######################
 func _on_NewGame_button_down():
 	emit_signal("button_pressed", "NewGame")
-
-func _on_PauseToggle_button_down():
-	emit_signal("button_pressed", "Pause")
 
 func _on_About_button_down():
 	$AboutBox.popup_centered()
@@ -98,8 +105,8 @@ func _on_MusicToggle_pressed():
 	music = true
 	emit_signal("button_pressed", "Music")
 
-
 func _on_AboutBox_popup_hide():
 	set_button_state("About", false)
 
-
+func _on_Pause_button_down():
+	emit_signal("button_pressed", "Pause")

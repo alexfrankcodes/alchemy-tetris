@@ -4,7 +4,12 @@
 [ext_resource path="res://Art/Tiles/tile.png" type="Texture" id=2]
 
 [node name="Shapes" type="GridContainer"]
-visible = false
+anchor_top = 0.00148315
+anchor_bottom = 0.121483
+margin_left = 1.0
+margin_top = -2.0
+margin_right = 429.0
+margin_bottom = 534.0
 columns = 4
 script = ExtResource( 1 )
 __meta__ = {
@@ -12,9 +17,9 @@ __meta__ = {
 }
 
 [node name="dot1" type="GridContainer" parent="."]
-margin_right = 68.0
+modulate = Color( 0.164706, 0.172549, 1, 1 )
+margin_right = 104.0
 margin_bottom = 68.0
-columns = 2
 
 [node name="TextureRect2" type="TextureRect" parent="dot1"]
 modulate = Color( 0.164706, 0.172549, 1, 1 )
@@ -24,31 +29,16 @@ texture = ExtResource( 2 )
 
 [node name="TextureRect3" type="TextureRect" parent="dot1"]
 modulate = Color( 0.164706, 0.172549, 1, 0 )
-margin_left = 36.0
-margin_right = 68.0
-margin_bottom = 32.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="dot1"]
-modulate = Color( 0.164706, 0.172549, 1, 0 )
 margin_top = 36.0
 margin_right = 32.0
 margin_bottom = 68.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect5" type="TextureRect" parent="dot1"]
-modulate = Color( 0.164706, 0.172549, 1, 0 )
-margin_left = 36.0
-margin_top = 36.0
-margin_right = 68.0
-margin_bottom = 68.0
-texture = ExtResource( 2 )
-
 [node name="dot2" type="GridContainer" parent="."]
-margin_left = 72.0
-margin_right = 140.0
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 108.0
+margin_right = 212.0
 margin_bottom = 68.0
-columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="dot2"]
 modulate = Color( 1, 0, 0, 1 )
@@ -57,33 +47,17 @@ margin_bottom = 32.0
 texture = ExtResource( 2 )
 
 [node name="TextureRect2" type="TextureRect" parent="dot2"]
-modulate = Color( 0, 0, 0, 0 )
-margin_left = 36.0
-margin_right = 68.0
-margin_bottom = 32.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="dot2"]
-modulate = Color( 0, 0, 0, 0 )
+modulate = Color( 1, 0, 0, 0 )
 margin_top = 36.0
 margin_right = 32.0
 margin_bottom = 68.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect4" type="TextureRect" parent="dot2"]
-modulate = Color( 0, 0, 0, 0 )
-margin_left = 36.0
-margin_top = 36.0
-margin_right = 68.0
-margin_bottom = 68.0
-texture = ExtResource( 2 )
-
 [node name="dot3" type="GridContainer" parent="."]
 modulate = Color( 1, 1, 0, 1 )
-margin_left = 144.0
-margin_right = 212.0
+margin_left = 216.0
+margin_right = 320.0
 margin_bottom = 68.0
-columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="dot3"]
 modulate = Color( 1, 1, 0, 1 )
@@ -93,32 +67,16 @@ texture = ExtResource( 2 )
 
 [node name="TextureRect2" type="TextureRect" parent="dot3"]
 modulate = Color( 1, 1, 0, 0 )
-margin_left = 36.0
-margin_right = 68.0
-margin_bottom = 32.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="dot3"]
-modulate = Color( 1, 1, 0, 0 )
 margin_top = 36.0
 margin_right = 32.0
 margin_bottom = 68.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect4" type="TextureRect" parent="dot3"]
-modulate = Color( 1, 1, 0, 0 )
-margin_left = 36.0
-margin_top = 36.0
-margin_right = 68.0
-margin_bottom = 68.0
-texture = ExtResource( 2 )
-
 [node name="dot4" type="GridContainer" parent="."]
 modulate = Color( 0, 0.607843, 0, 1 )
-margin_left = 216.0
-margin_right = 284.0
+margin_left = 324.0
+margin_right = 428.0
 margin_bottom = 68.0
-columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="dot4"]
 modulate = Color( 1, 1, 0, 1 )
@@ -128,29 +86,15 @@ texture = ExtResource( 2 )
 
 [node name="TextureRect2" type="TextureRect" parent="dot4"]
 modulate = Color( 1, 1, 0, 0 )
-margin_left = 36.0
-margin_right = 68.0
-margin_bottom = 32.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="dot4"]
-modulate = Color( 1, 1, 0, 0 )
 margin_top = 36.0
 margin_right = 32.0
 margin_bottom = 68.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect4" type="TextureRect" parent="dot4"]
-modulate = Color( 1, 1, 0, 0 )
-margin_left = 36.0
-margin_top = 36.0
-margin_right = 68.0
-margin_bottom = 68.0
-texture = ExtResource( 2 )
-
 [node name="domino red" type="GridContainer" parent="."]
+modulate = Color( 1, 0, 0, 1 )
 margin_top = 72.0
-margin_right = 68.0
+margin_right = 104.0
 margin_bottom = 140.0
 columns = 2
 
@@ -183,9 +127,10 @@ margin_bottom = 68.0
 texture = ExtResource( 2 )
 
 [node name="domino yellow" type="GridContainer" parent="."]
-margin_left = 72.0
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 108.0
 margin_top = 72.0
-margin_right = 140.0
+margin_right = 212.0
 margin_bottom = 140.0
 columns = 2
 
@@ -219,9 +164,9 @@ texture = ExtResource( 2 )
 
 [node name="domino green" type="GridContainer" parent="."]
 modulate = Color( 0, 0.607843, 0, 1 )
-margin_left = 144.0
+margin_left = 216.0
 margin_top = 72.0
-margin_right = 212.0
+margin_right = 320.0
 margin_bottom = 140.0
 columns = 2
 
@@ -254,9 +199,9 @@ margin_bottom = 68.0
 texture = ExtResource( 2 )
 
 [node name="domino blue" type="GridContainer" parent="."]
-margin_left = 216.0
+margin_left = 324.0
 margin_top = 72.0
-margin_right = 284.0
+margin_right = 428.0
 margin_bottom = 140.0
 columns = 2
 
@@ -290,7 +235,7 @@ texture = ExtResource( 2 )
 
 [node name="domino RY1" type="GridContainer" parent="."]
 margin_top = 144.0
-margin_right = 68.0
+margin_right = 104.0
 margin_bottom = 212.0
 columns = 2
 
@@ -323,9 +268,9 @@ margin_bottom = 68.0
 texture = ExtResource( 2 )
 
 [node name="domino BY" type="GridContainer" parent="."]
-margin_left = 72.0
+margin_left = 108.0
 margin_top = 144.0
-margin_right = 140.0
+margin_right = 212.0
 margin_bottom = 212.0
 columns = 2
 
@@ -358,9 +303,9 @@ margin_bottom = 68.0
 texture = ExtResource( 2 )
 
 [node name="domino YG1" type="GridContainer" parent="."]
-margin_left = 144.0
+margin_left = 216.0
 margin_top = 144.0
-margin_right = 212.0
+margin_right = 320.0
 margin_bottom = 212.0
 columns = 2
 
@@ -393,9 +338,9 @@ margin_bottom = 68.0
 texture = ExtResource( 2 )
 
 [node name="domino BR" type="GridContainer" parent="."]
-margin_left = 216.0
+margin_left = 324.0
 margin_top = 144.0
-margin_right = 284.0
+margin_right = 428.0
 margin_bottom = 212.0
 columns = 2
 
@@ -429,8 +374,8 @@ texture = ExtResource( 2 )
 
 [node name="domino YG2" type="GridContainer" parent="."]
 margin_top = 216.0
-margin_right = 68.0
-margin_bottom = 284.0
+margin_right = 104.0
+margin_bottom = 320.0
 columns = 2
 
 [node name="TextureRect3" type="TextureRect" parent="domino YG2"]
@@ -462,10 +407,10 @@ margin_bottom = 68.0
 texture = ExtResource( 2 )
 
 [node name="domino RB2" type="GridContainer" parent="."]
-margin_left = 72.0
+margin_left = 108.0
 margin_top = 216.0
-margin_right = 140.0
-margin_bottom = 284.0
+margin_right = 212.0
+margin_bottom = 320.0
 columns = 2
 
 [node name="TextureRect7" type="TextureRect" parent="domino RB2"]
@@ -494,4 +439,1774 @@ margin_left = 36.0
 margin_top = 36.0
 margin_right = 68.0
 margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I GBB" type="GridContainer" parent="."]
+margin_left = 216.0
+margin_top = 216.0
+margin_right = 320.0
+margin_bottom = 320.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I GBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I GBB"]
+modulate = Color( 0, 0.635294, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I GBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I GBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="Tromino I GBB"]
+modulate = Color( 0.164706, 0.172549, 1, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I GBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I GBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I GBB"]
+modulate = Color( 0.164706, 0.172549, 1, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I GBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I RBB" type="GridContainer" parent="."]
+margin_left = 324.0
+margin_top = 216.0
+margin_right = 428.0
+margin_bottom = 320.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I RBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I RBB"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I RBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I RBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="Tromino I RBB"]
+modulate = Color( 0.164706, 0.172549, 1, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I RBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I RBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I RBB"]
+modulate = Color( 0.164706, 0.172549, 1, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I RBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I YBB" type="GridContainer" parent="."]
+margin_top = 324.0
+margin_right = 104.0
+margin_bottom = 428.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I YBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I YBB"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I YBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I YBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="Tromino I YBB"]
+modulate = Color( 0.164706, 0.172549, 1, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I YBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I YBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I YBB"]
+modulate = Color( 0.164706, 0.172549, 1, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I YBB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  GGB" type="GridContainer" parent="."]
+margin_left = 108.0
+margin_top = 324.0
+margin_right = 212.0
+margin_bottom = 428.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  GGB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  GGB"]
+modulate = Color( 0, 0.635294, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  GGB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  GGB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  GGB"]
+modulate = Color( 0, 0.635294, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  GGB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  GGB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  GGB"]
+modulate = Color( 0.164706, 0.172549, 1, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect13" type="TextureRect" parent="Tromino I  GGB"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  GGR" type="GridContainer" parent="."]
+margin_left = 216.0
+margin_top = 324.0
+margin_right = 320.0
+margin_bottom = 428.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  GGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  GGR"]
+modulate = Color( 0, 0.635294, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  GGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  GGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  GGR"]
+modulate = Color( 0, 0.635294, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  GGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  GGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  GGR"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect13" type="TextureRect" parent="Tromino I  GGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  GGY" type="GridContainer" parent="."]
+margin_left = 324.0
+margin_top = 324.0
+margin_right = 428.0
+margin_bottom = 428.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  GGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  GGY"]
+modulate = Color( 0, 0.635294, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  GGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  GGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  GGY"]
+modulate = Color( 0, 0.635294, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  GGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  GGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  GGY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect13" type="TextureRect" parent="Tromino I  GGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  GRR" type="GridContainer" parent="."]
+margin_top = 432.0
+margin_right = 104.0
+margin_bottom = 536.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  GRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  GRR"]
+modulate = Color( 0, 0.635294, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  GRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  GRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  GRR"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  GRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  GRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  GRR"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  GRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  YRR" type="GridContainer" parent="."]
+margin_left = 108.0
+margin_top = 432.0
+margin_right = 212.0
+margin_bottom = 536.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  YRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  YRR"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  YRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  YRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  YRR"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  YRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  YRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  YRR"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  YRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  BRR" type="GridContainer" parent="."]
+margin_left = 216.0
+margin_top = 432.0
+margin_right = 320.0
+margin_bottom = 536.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  BRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  BRR"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  BRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  BRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  BRR"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  BRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  BRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  BRR"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  BRR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  GYY" type="GridContainer" parent="."]
+margin_left = 324.0
+margin_top = 432.0
+margin_right = 428.0
+margin_bottom = 536.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  GYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  GYY"]
+modulate = Color( 0, 0.560784, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  GYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  GYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  GYY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  GYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  GYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  GYY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  GYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  RYY" type="GridContainer" parent="."]
+margin_top = 540.0
+margin_right = 104.0
+margin_bottom = 644.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  RYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  RYY"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  RYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  RYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  RYY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  RYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  RYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  RYY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  RYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  BYY" type="GridContainer" parent="."]
+margin_left = 108.0
+margin_top = 540.0
+margin_right = 212.0
+margin_bottom = 644.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  BYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  BYY"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  BYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  BYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  BYY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  BYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  BYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  BYY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  BYY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  BYR" type="GridContainer" parent="."]
+margin_left = 216.0
+margin_top = 540.0
+margin_right = 320.0
+margin_bottom = 644.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  BYR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  BYR"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  BYR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  BYR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  BYR"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  BYR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  BYR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  BYR"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  BYR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  BYG" type="GridContainer" parent="."]
+margin_left = 324.0
+margin_top = 540.0
+margin_right = 428.0
+margin_bottom = 644.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  BYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  BYG"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  BYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  BYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  BYG"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  BYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  BYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  BYG"]
+modulate = Color( 0, 0.541176, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  BYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  RYG" type="GridContainer" parent="."]
+margin_top = 648.0
+margin_right = 104.0
+margin_bottom = 752.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  RYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  RYG"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  RYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  RYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  RYG"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  RYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  RYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  RYG"]
+modulate = Color( 0, 0.541176, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  RYG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  BRG" type="GridContainer" parent="."]
+margin_left = 108.0
+margin_top = 648.0
+margin_right = 212.0
+margin_bottom = 752.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  BRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  BRG"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  BRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  BRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  BRG"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  BRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  BRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  BRG"]
+modulate = Color( 0, 0.541176, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  BRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  YRG" type="GridContainer" parent="."]
+margin_left = 216.0
+margin_top = 648.0
+margin_right = 320.0
+margin_bottom = 752.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  YRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  YRG"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  YRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  YRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  YRG"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  YRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  YRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  YRG"]
+modulate = Color( 0, 0.541176, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  YRG"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  BRY" type="GridContainer" parent="."]
+margin_left = 324.0
+margin_top = 648.0
+margin_right = 428.0
+margin_bottom = 752.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  BRY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  BRY"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  BRY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  BRY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  BRY"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  BRY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  BRY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  BRY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  BRY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  BGR" type="GridContainer" parent="."]
+margin_top = 756.0
+margin_right = 104.0
+margin_bottom = 860.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  BGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  BGR"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  BGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  BGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  BGR"]
+modulate = Color( 0, 0.541176, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  BGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  BGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  BGR"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  BGR"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  BGY" type="GridContainer" parent="."]
+margin_left = 108.0
+margin_top = 756.0
+margin_right = 212.0
+margin_bottom = 860.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  BGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  BGY"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  BGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  BGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  BGY"]
+modulate = Color( 0, 0.541176, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  BGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  BGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  BGY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  BGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  RGY" type="GridContainer" parent="."]
+margin_left = 216.0
+margin_top = 756.0
+margin_right = 320.0
+margin_bottom = 860.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  RGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  RGY"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  RGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  RGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  RGY"]
+modulate = Color( 0, 0.541176, 0, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  RGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  RGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  RGY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  RGY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  GBY" type="GridContainer" parent="."]
+margin_left = 324.0
+margin_top = 756.0
+margin_right = 428.0
+margin_bottom = 860.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  GBY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  GBY"]
+modulate = Color( 0, 0.541176, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  GBY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  GBY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  GBY"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  GBY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  GBY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  GBY"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  GBY"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  GBY2" type="GridContainer" parent="."]
+margin_top = 864.0
+margin_right = 104.0
+margin_bottom = 968.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  GBY2"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  GBY2"]
+modulate = Color( 0, 0.541176, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  GBY2"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  GBY2"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  GBY2"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  GBY2"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  GBY2"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  GBY2"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  GBY2"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="Tromino I  GBY3" type="GridContainer" parent="."]
+margin_left = 108.0
+margin_top = 864.0
+margin_right = 212.0
+margin_bottom = 968.0
+columns = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Tromino I  GBY3"]
+modulate = Color( 1, 0, 0, 0 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="Tromino I  GBY3"]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect10" type="TextureRect" parent="Tromino I  GBY3"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect9" type="TextureRect" parent="Tromino I  GBY3"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="Tromino I  GBY3"]
+modulate = Color( 0, 0.156863, 1, 1 )
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect12" type="TextureRect" parent="Tromino I  GBY3"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="Tromino I  GBY3"]
+modulate = Color( 1, 0, 0, 0 )
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Tromino I  GBY3"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect11" type="TextureRect" parent="Tromino I  GBY3"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
 texture = ExtResource( 2 )

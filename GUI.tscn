@@ -7,6 +7,8 @@
 anchor_top = -0.00104872
 anchor_right = 1.0
 anchor_bottom = 0.998951
+margin_top = -2.0
+margin_bottom = -2.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -14,25 +16,25 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 682.0
-margin_top = 267.0
+margin_top = 171.0
 margin_right = 918.0
-margin_bottom = 631.0
+margin_bottom = 728.0
 
 [node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 236.0
-margin_bottom = 65.0
+margin_bottom = 164.0
 grow_horizontal = 2
 
 [node name="_NextBlock" type="Label" parent="VBoxContainer/TopBar"]
-margin_top = 25.0
+margin_top = 75.0
 margin_right = 69.0
-margin_bottom = 39.0
+margin_bottom = 89.0
 text = "Next Block"
 
 [node name="NextBlock" type="GridContainer" parent="VBoxContainer/TopBar"]
 margin_left = 73.0
 margin_right = 138.0
-margin_bottom = 65.0
+margin_bottom = 164.0
 custom_constants/vseparation = 1
 custom_constants/hseparation = 1
 columns = 2
@@ -61,23 +63,62 @@ margin_right = 65.0
 margin_bottom = 65.0
 texture = ExtResource( 1 )
 
+[node name="Cell5" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
+margin_top = 66.0
+margin_right = 32.0
+margin_bottom = 98.0
+texture = ExtResource( 1 )
+
+[node name="Cell6" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
+margin_left = 33.0
+margin_top = 66.0
+margin_right = 65.0
+margin_bottom = 98.0
+texture = ExtResource( 1 )
+
+[node name="Cell7" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
+margin_top = 99.0
+margin_right = 32.0
+margin_bottom = 131.0
+texture = ExtResource( 1 )
+
+[node name="Cell8" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
+margin_left = 33.0
+margin_top = 99.0
+margin_right = 65.0
+margin_bottom = 131.0
+texture = ExtResource( 1 )
+
+[node name="Cell9" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
+margin_top = 132.0
+margin_right = 32.0
+margin_bottom = 164.0
+texture = ExtResource( 1 )
+
+[node name="Cell10" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
+margin_left = 33.0
+margin_top = 132.0
+margin_right = 65.0
+margin_bottom = 164.0
+texture = ExtResource( 1 )
+
 [node name="GameSpace" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 69.0
+margin_top = 168.0
 margin_right = 236.0
-margin_bottom = 364.0
+margin_bottom = 557.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GameSpace"]
 margin_right = 32.0
-margin_bottom = 295.0
+margin_bottom = 389.0
 
 [node name="Background" type="ColorRect" parent="VBoxContainer/GameSpace/MarginContainer"]
 margin_right = 32.0
-margin_bottom = 295.0
+margin_bottom = 389.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Grid" type="GridContainer" parent="VBoxContainer/GameSpace/MarginContainer"]
 margin_right = 32.0
-margin_bottom = 295.0
+margin_bottom = 389.0
 columns = 20
 
 [node name="Cell" type="TextureRect" parent="VBoxContainer/GameSpace/MarginContainer/Grid"]
@@ -88,116 +129,176 @@ texture = ExtResource( 1 )
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/GameSpace"]
 margin_left = 36.0
 margin_right = 236.0
-margin_bottom = 295.0
+margin_bottom = 389.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GameSpace/CenterContainer"]
 margin_left = 29.0
 margin_right = 171.0
-margin_bottom = 295.0
+margin_bottom = 389.0
 custom_constants/separation = 9
 
 [node name="Stats" type="GridContainer" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
 margin_right = 142.0
-margin_bottom = 110.0
+margin_bottom = 206.0
 custom_constants/vseparation = 10
 custom_constants/hseparation = 20
 columns = 2
 
-[node name="_MainProgress " type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
+[node name="_Level" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_right = 94.0
 margin_bottom = 14.0
+text = "Level:"
+
+[node name="Level" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
+margin_left = 114.0
+margin_right = 142.0
+margin_bottom = 14.0
+text = "1"
+
+[node name="_Score" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
+margin_top = 24.0
+margin_right = 94.0
+margin_bottom = 38.0
+text = "Score:"
+
+[node name="Score" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
+margin_left = 114.0
+margin_top = 24.0
+margin_right = 142.0
+margin_bottom = 38.0
+text = "0"
+
+[node name="_HighScore" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
+margin_top = 48.0
+margin_right = 94.0
+margin_bottom = 62.0
+text = "High Score:"
+
+[node name="HighScore" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
+margin_left = 114.0
+margin_top = 48.0
+margin_right = 142.0
+margin_bottom = 62.0
+text = "0"
+
+[node name="_Lines" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
+margin_top = 72.0
+margin_right = 94.0
+margin_bottom = 86.0
+text = "Lines"
+
+[node name="Lines" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
+margin_left = 114.0
+margin_top = 72.0
+margin_right = 142.0
+margin_bottom = 86.0
+text = "0"
+
+[node name="_MainProgress " type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
+margin_top = 96.0
+margin_right = 94.0
+margin_bottom = 110.0
 text = "Main Progress:"
 
 [node name="MainProgress" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
+margin_top = 96.0
 margin_right = 142.0
-margin_bottom = 14.0
+margin_bottom = 110.0
 text = "50%"
 
 [node name="_Element1" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 24.0
+margin_top = 120.0
 margin_right = 94.0
-margin_bottom = 38.0
+margin_bottom = 134.0
 text = "Element I:"
 
 [node name="Element1" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
-margin_top = 24.0
+margin_top = 120.0
 margin_right = 142.0
-margin_bottom = 38.0
+margin_bottom = 134.0
 text = "23%"
 
 [node name="_Element2" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 48.0
+margin_top = 144.0
 margin_right = 94.0
-margin_bottom = 62.0
+margin_bottom = 158.0
 text = "Element II:"
 
 [node name="Element 2" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
-margin_top = 48.0
+margin_top = 144.0
 margin_right = 142.0
-margin_bottom = 62.0
+margin_bottom = 158.0
 text = "62%"
 
 [node name="_Element3" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 72.0
+margin_top = 168.0
 margin_right = 94.0
-margin_bottom = 86.0
+margin_bottom = 182.0
 text = "Element III:"
 
 [node name="Element3" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
-margin_top = 72.0
+margin_top = 168.0
 margin_right = 142.0
-margin_bottom = 86.0
+margin_bottom = 182.0
 text = "80%"
 
 [node name="_Element4" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 96.0
+margin_top = 192.0
 margin_right = 94.0
-margin_bottom = 110.0
+margin_bottom = 206.0
 text = "Element IV:"
 
 [node name="Element4" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
 margin_left = 114.0
-margin_top = 96.0
+margin_top = 192.0
 margin_right = 142.0
-margin_bottom = 110.0
+margin_bottom = 206.0
 text = "20%"
 
 [node name="NewGame" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 119.0
+margin_top = 215.0
 margin_right = 142.0
-margin_bottom = 139.0
+margin_bottom = 235.0
 text = "New Game"
 
-[node name="PauseToggle" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 148.0
+[node name="Pause" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 244.0
 margin_right = 142.0
-margin_bottom = 168.0
+margin_bottom = 264.0
 text = "Pause"
 
-[node name="SoundToggle" type="CheckButton" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 177.0
+[node name="_Sound" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 273.0
 margin_right = 142.0
-margin_bottom = 217.0
-pressed = true
+margin_bottom = 287.0
 text = "Sound"
 
-[node name="MusicToggle" type="CheckButton" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 226.0
+[node name="Sound" type="HSlider" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 296.0
 margin_right = 142.0
-margin_bottom = 266.0
-pressed = true
+margin_bottom = 312.0
+
+[node name="_Music" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 321.0
+margin_right = 142.0
+margin_bottom = 335.0
 text = "Music"
 
-[node name="About" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 275.0
+[node name="Music" type="HSlider" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 344.0
 margin_right = 142.0
-margin_bottom = 295.0
+margin_bottom = 360.0
+
+[node name="About" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
+margin_top = 369.0
+margin_right = 142.0
+margin_bottom = 389.0
 text = "About"
 
 [node name="AboutBox" type="AcceptDialog" parent="."]
@@ -210,8 +311,6 @@ dialog_text = "This is a game made for My First Game Jam 2020: Summer Edition.
 
 Controls:"
 [connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_button_down"]
-[connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/PauseToggle" to="." method="_on_PauseToggle_button_down"]
-[connection signal="pressed" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/SoundToggle" to="." method="_on_SoundToggle_pressed"]
-[connection signal="pressed" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/MusicToggle" to="." method="_on_MusicToggle_pressed"]
+[connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Pause" to="." method="_on_Pause_button_down"]
 [connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/About" to="." method="_on_About_button_down"]
 [connection signal="popup_hide" from="AboutBox" to="." method="_on_AboutBox_popup_hide"]

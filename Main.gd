@@ -5,55 +5,157 @@ enum { ROTATE_LEFT, ROTATE_RIGHT }
 
 const DISABLED = true
 const ENABLED = false
+const MAX_LEVEL = 100
 const START_POS = 5
 const END_POS = 25
 const TICK_SPEED = 1.0
 const FAST_MULTIPLE = 10
 const WAIT_TIME = 0.15
 const REPEAT_DELAY = 0.05
+const FILE_NAME = "user://tetron.json"
 
+# Game variables
 var gui
 var state = STOPPED
+var music_position = 0.0
+
+# Grid variables
 var grid = []
 var cols
+
+#Shape variables
 var shape: ShapeData
 var next_shape: ShapeData
 var pos = 0
-var music_position = 0.0
+var count = 0
+var bonus = 0
 
+###################### SETUP ######################
 func _ready():
 	gui = $GUI
 	gui.connect("button_pressed", self, "_button_pressed")
 	gui.set_button_states(ENABLED)
 	cols = gui.grid.get_columns()
+	gui.reset_stats()
+	load_game()
 	randomize()
 
+func clear_grid():
+	grid.clear()
+	grid.resize(gui.grid.get_child_count())
+	for i in grid.size():
+		grid[i] = false
+	gui.clear_all_cells()
+
+
+###################### GAME STATE ######################
+func _start_game():
+	# print("Game playing")
+	state = PLAYING
+	music_position = 0.0
+	if _music_is_on():
+		_music(PLAY)
+	clear_grid()
+	gui.reset_stats(gui.high_score)
+	new_shape()
+
+func pause(value = true):
+	get_tree().paused = value
+
+func save_game():
+	var data = {
+		"music": gui.music,
+		"sound": gui.sound,
+		"high_score": gui.high_score
+	}
+	var file = File.new()
+	file.open(FILE_NAME, File.WRITE)
+	file.store_string(to_json(data))
+	file.close()
+
+func load_game():
+	var file = File.new()
+	if file.file_exists(FILE_NAME):
+		file.open(FILE_NAME, File.READ)
+		var data = parse_json(file.get_as_text())
+		print(data)
+		gui.settings(data)
+
+func _game_over():
+	$Ticker.stop()
+	$LeftTimer.stop()
+	$RightTimer.stop()
+	gui.set_button_states(ENABLED)
+	if _music_is_on():
+		_music(STOP)
+	if _sound_is_on():
+		$SoundPlayer.play()
+	state = STOPPED
+	save_game()
+
+
+###################### LEVELING SYSTEM ######################
+func level_up():
+	count += 1
+	if count % 10 == 0:
+		increase_level()
+
+func increase_level():
+	if gui.level < MAX_LEVEL:
+		gui.level += 1
+		$Ticker.set_wait_time(TICK_SPEED / gui.level)
+
+###################### SCORING SYSTEM ######################
+func add_to_score(rows):
+	gui.lines += rows
+	var score = 10 * int(pow(2, rows - 1))
+	print("Added %d to score" % score)
+	gui.score += score
+	update_high_score()
+
+func update_high_score():
+	if gui.score > gui.high_score:
+		gui.high_score = gui.score
+
+
+###################### INPUT HANDLING ######################
 func _button_pressed(button_name):
 	match button_name:
 		"NewGame":
 			gui.set_button_states(DISABLED)
 			_start_game()
-
+		
 		"Pause":
 			if state == PLAYING:
-				gui.set_button_text("PauseToggle", "Resume")
+				gui.set_button_text("Pause", "Resume")
 				state = PAUSED
-				_music(PAUSE)
+				pause() 
+				if _music_is_on():
+					_music(PAUSE)
 			else:
-				gui.set_button_text("PauseToggle", "Pause")
+				gui.set_button_text("Pause", "Pause")
 				state = PLAYING
-				_music(PLAY)
-
-		"Sound":
-			print("Changed sound setting")
-
+				pause(false)
+				if _music_is_on():
+					_music(PLAY)
+		
 		"Music":
+			# copy gui.music value to data
 			if state == PLAYING:
 				if _music_is_on():
+					print("Music changed. Level: %d" % gui.music)
 					_music(PLAY)
 				else:
 					_music(STOP)
-
+		
+		"Sound":
+			# copy gui.sound value to data
+			if _sound_is_on():
+				$SoundPlayer.volume_db = gui.sound
+				print("Sound changed. Level: %d" % gui.sound)
+			else:
+				print("Sound off")
+		
 		"About":
 			gui.set_button_state("About", DISABLED)
 
@@ -85,47 +187,21 @@ func _input(event):
 		if event is InputEventKey:
 			get_tree().set_input_as_handled()
 
-func _game_over():
-	$Ticker.stop()
-	$LeftTimer.stop()
-	$RightTimer.stop()
-	gui.set_button_states(ENABLED)
-	if _music_is_on():
-		_music(STOP)
-	if _sound_is_on():
-		$SoundPlayer.play()
-	state = STOPPED
-	print("Game stopped")
+###################### DROP ######################
 
-
-# Ticker functions
 func normal_drop():
-	$Ticker.start(TICK_SPEED)
+	$Ticker.start(TICK_SPEED / gui.level)
 
 func soft_drop():
 	$Ticker.stop()
-	$Ticker.start(TICK_SPEED / FAST_MULTIPLE)
+	$Ticker.start(TICK_SPEED / gui.level / FAST_MULTIPLE)
 
 func hard_drop():
-	pass
+	$Ticker.stop()
+	$Ticker.start(TICK_SPEED / MAX_LEVEL)
 
-# Reset grid at the start of the game
-func clear_grid():
-	grid.clear()
-	grid.resize(gui.grid.get_child_count())
-	for i in grid.size():
-		grid[i] = false
-	gui.clear_all_cells()
 
-func _start_game():
-	print('Game Playing')
-	state = PLAYING
-	music_position = 0.0
-	_music(PLAY)
-	clear_grid()
-	new_shape()
-	
-
+###################### SHAPE ######################
 func new_shape():
 	if next_shape:
 		shape = next_shape
@@ -136,51 +212,17 @@ func new_shape():
 	pos = START_POS
 	add_shape_to_grid()
 	normal_drop()
-
-
+	level_up()
 
 func add_shape_to_grid():
 	place_shape(pos, true, false, shape.color)
-	
+
 func remove_shape_from_grid():
 	place_shape(pos, true)
-	
+
 func lock_shape_to_grid():
 	place_shape(pos, false, true)
 
-func rotate(dir):
-	match dir:
-		ROTATE_LEFT:
-			shape.rotate_left()
-			dir = ROTATE_RIGHT
-		ROTATE_RIGHT:
-			shape.rotate_left()
-			dir = ROTATE_LEFT
-	return dir
-
-func move_shape(new_pos, dir = null):
-	remove_shape_from_grid()
-	# Rotate shape and store undo direction
-	dir = rotate(dir)
-	# If we can place the shape then update the position, else undo rotation
-	var ok = place_shape(new_pos)
-	if ok:
-		pos = new_pos
-	else:
-		rotate(dir)
-	add_shape_to_grid()
-	return ok
-
-func move_left():
-	if pos % cols > 0:
-		move_shape(pos - 1)
-
-
-func move_right():
-	if pos % cols < cols - 1:
-		move_shape(pos + 1)
-
-## TODO: Change color parameter based on element
 func place_shape(index, add_tiles = false, lock = false, color = Color(0)):
 	var ok = true
 	var size = shape.coors.size()
@@ -203,31 +245,63 @@ func place_shape(index, add_tiles = false, lock = false, color = Color(0)):
 		y += 1
 	return ok
 
+func move_shape(new_pos, dir = null):
+	remove_shape_from_grid()
+	dir = rotate(dir)
+	var ok = place_shape(new_pos)
+	if ok:
+		pos = new_pos
+	else:
+		rotate(dir)
+	add_shape_to_grid()
+	return ok
+
+func rotate(dir):
+	match dir:
+		ROTATE_LEFT:
+			shape.rotate_left()
+			dir = ROTATE_RIGHT
+		ROTATE_RIGHT:
+			shape.rotate_left()
+			dir = ROTATE_LEFT
+	return dir
+
+func move_left():
+	if pos % cols > 0:
+		move_shape(pos - 1)
+
+func move_right():
+	if pos % cols < cols - 1:
+		move_shape(pos + 1)
+
+###################### MUSIC/SOUND ######################
+
 func _music(action):
-	if gui.music and action == PLAY:
-		$MusicPlayer.play(music_position)
-		print("Music started")
+	if action == PLAY:
+		$MusicPlayer.volume_db = gui.music
+		if !$MusicPlayer.is_playing():
+			$MusicPlayer.play(music_position)
 	else:
 		music_position = $MusicPlayer.get_playback_position()
 		$MusicPlayer.stop()
-		print("Music stopped")
 
 func _music_is_on():
-	return gui.music
+	return gui.music > gui.min_vol
 
 func _sound_is_on():
-	return gui.sound
+	return gui.sound > gui.min_vol
 
+
+###################### TICKERS ######################
 
 func _on_Ticker_timeout():
 	var new_pos = pos + cols
 	if move_shape(new_pos):
-		# Update score
-		pass
+		gui.score += bonus
+		update_high_score()
 	else:
 		if new_pos <= END_POS:
-			#TODO: _game_over()
-			pass
+			_game_over()
 		else:
 			lock_shape_to_grid()
 			check_rows()
@@ -237,11 +311,12 @@ func _on_LeftTimer_timeout():
 	$LeftTimer.wait_time = REPEAT_DELAY
 	move_left()
 
-
 func _on_RightTimer_timeout():
 	$RightTimer.wait_time = REPEAT_DELAY
 	move_right()
 
+
+###################### ROWS ######################
 func check_rows():
 	var i = grid.size() - 1
 	var x = 0
@@ -266,7 +341,7 @@ func check_rows():
 
 func remove_rows(rows):
 		var rows_moved = 0
-		# Update score
+		add_to_score(rows.size())
 		pause()
 		if _sound_is_on():
 			$SoundPlayer.play()
@@ -291,5 +366,3 @@ func remove_rows(rows):
 			rows_moved += 1
 		add_shape_to_grid()
 
-func pause(value = true):
-	get_tree().paused = value
