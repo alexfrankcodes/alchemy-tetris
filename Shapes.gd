@@ -39,21 +39,21 @@ func _ready():
 		#print(data.coors) # For testing
 		data.grid = _get_grid(size, shape.get_children())
 		_shapes.append(data)
-		
 
 func _get_grid(n, cells):
 	var grid = []
 	var row = []
 	var i = 0
 	for cell in cells:
-		row.append(cell.modulate.a > 0.1)
+		var texture = cell.get_children() 
+		if cell.modulate.a > 0.1:
+			row.append(texture)
 		i += 1
 		if i == n:
 			grid.append(row)
 			i = 0
 			row = []
 	return grid
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
