@@ -1,5 +1,6 @@
 extends CenterContainer
 
+const GRID_SIZE = 100
 
 var grid
 var next
@@ -23,7 +24,7 @@ func _ready():
 	next = find_node("NextBlock")
 	min_vol = find_node("Music").get_min()
 	find_node("Sound").set_min(min_vol)
-	generate_cells(grid, 400)
+	generate_cells(grid, GRID_SIZE)
 	clear_all_cells()
 
 func generate_cells(node, n):

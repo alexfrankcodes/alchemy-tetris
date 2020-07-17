@@ -32,7 +32,6 @@ Shapes="*res://Shapes.tscn"
 
 window/size/width=1600
 window/size/height=900
-window/size/resizable=false
 
 [rendering]
 

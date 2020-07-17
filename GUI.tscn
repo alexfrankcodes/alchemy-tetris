@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Art/Tiles/tile.png" type="Texture" id=1]
+[ext_resource path="res://Art/Tiles/plant.png" type="Texture" id=1]
 [ext_resource path="res://GUI.gd" type="Script" id=2]
 
 [node name="GUI" type="CenterContainer"]
@@ -14,293 +14,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 682.0
-margin_top = 171.0
-margin_right = 918.0
-margin_bottom = 728.0
-
-[node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 236.0
-margin_bottom = 164.0
-grow_horizontal = 2
-
-[node name="_NextBlock" type="Label" parent="VBoxContainer/TopBar"]
-margin_top = 75.0
-margin_right = 69.0
-margin_bottom = 89.0
-text = "Next Block"
-
-[node name="NextBlock" type="GridContainer" parent="VBoxContainer/TopBar"]
-margin_left = 73.0
-margin_right = 138.0
-margin_bottom = 164.0
-custom_constants/vseparation = 1
-custom_constants/hseparation = 1
-columns = 2
-
-[node name="Cell" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_right = 32.0
-margin_bottom = 32.0
-texture = ExtResource( 1 )
-
-[node name="Cell2" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_left = 33.0
-margin_right = 65.0
-margin_bottom = 32.0
-texture = ExtResource( 1 )
-
-[node name="Cell3" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_top = 33.0
-margin_right = 32.0
-margin_bottom = 65.0
-texture = ExtResource( 1 )
-
-[node name="Cell4" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_left = 33.0
-margin_top = 33.0
-margin_right = 65.0
-margin_bottom = 65.0
-texture = ExtResource( 1 )
-
-[node name="Cell5" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_top = 66.0
-margin_right = 32.0
-margin_bottom = 98.0
-texture = ExtResource( 1 )
-
-[node name="Cell6" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_left = 33.0
-margin_top = 66.0
-margin_right = 65.0
-margin_bottom = 98.0
-texture = ExtResource( 1 )
-
-[node name="Cell7" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_top = 99.0
-margin_right = 32.0
-margin_bottom = 131.0
-texture = ExtResource( 1 )
-
-[node name="Cell8" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_left = 33.0
-margin_top = 99.0
-margin_right = 65.0
-margin_bottom = 131.0
-texture = ExtResource( 1 )
-
-[node name="Cell9" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_top = 132.0
-margin_right = 32.0
-margin_bottom = 164.0
-texture = ExtResource( 1 )
-
-[node name="Cell10" type="TextureRect" parent="VBoxContainer/TopBar/NextBlock"]
-margin_left = 33.0
-margin_top = 132.0
-margin_right = 65.0
-margin_bottom = 164.0
-texture = ExtResource( 1 )
-
-[node name="GameSpace" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 168.0
-margin_right = 236.0
-margin_bottom = 557.0
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GameSpace"]
-margin_right = 32.0
-margin_bottom = 389.0
-
-[node name="Background" type="ColorRect" parent="VBoxContainer/GameSpace/MarginContainer"]
-margin_right = 32.0
-margin_bottom = 389.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="Grid" type="GridContainer" parent="VBoxContainer/GameSpace/MarginContainer"]
-margin_right = 32.0
-margin_bottom = 389.0
-columns = 20
-
-[node name="Cell" type="TextureRect" parent="VBoxContainer/GameSpace/MarginContainer/Grid"]
-margin_right = 32.0
-margin_bottom = 32.0
-texture = ExtResource( 1 )
-
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/GameSpace"]
-margin_left = 36.0
-margin_right = 236.0
-margin_bottom = 389.0
-rect_min_size = Vector2( 200, 0 )
-size_flags_horizontal = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GameSpace/CenterContainer"]
-margin_left = 29.0
-margin_right = 171.0
-margin_bottom = 389.0
-custom_constants/separation = 9
-
-[node name="Stats" type="GridContainer" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_right = 142.0
-margin_bottom = 206.0
-custom_constants/vseparation = 10
-custom_constants/hseparation = 20
-columns = 2
-
-[node name="_Level" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_right = 94.0
-margin_bottom = 14.0
-text = "Level:"
-
-[node name="Level" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_right = 142.0
-margin_bottom = 14.0
-text = "1"
-
-[node name="_Score" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 24.0
-margin_right = 94.0
-margin_bottom = 38.0
-text = "Score:"
-
-[node name="Score" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_top = 24.0
-margin_right = 142.0
-margin_bottom = 38.0
-text = "0"
-
-[node name="_HighScore" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 48.0
-margin_right = 94.0
-margin_bottom = 62.0
-text = "High Score:"
-
-[node name="HighScore" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_top = 48.0
-margin_right = 142.0
-margin_bottom = 62.0
-text = "0"
-
-[node name="_Lines" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 72.0
-margin_right = 94.0
-margin_bottom = 86.0
-text = "Lines"
-
-[node name="Lines" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_top = 72.0
-margin_right = 142.0
-margin_bottom = 86.0
-text = "0"
-
-[node name="_MainProgress " type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 96.0
-margin_right = 94.0
-margin_bottom = 110.0
-text = "Main Progress:"
-
-[node name="MainProgress" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_top = 96.0
-margin_right = 142.0
-margin_bottom = 110.0
-text = "50%"
-
-[node name="_Element1" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 120.0
-margin_right = 94.0
-margin_bottom = 134.0
-text = "Element I:"
-
-[node name="Element1" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_top = 120.0
-margin_right = 142.0
-margin_bottom = 134.0
-text = "23%"
-
-[node name="_Element2" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 144.0
-margin_right = 94.0
-margin_bottom = 158.0
-text = "Element II:"
-
-[node name="Element 2" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_top = 144.0
-margin_right = 142.0
-margin_bottom = 158.0
-text = "62%"
-
-[node name="_Element3" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 168.0
-margin_right = 94.0
-margin_bottom = 182.0
-text = "Element III:"
-
-[node name="Element3" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_top = 168.0
-margin_right = 142.0
-margin_bottom = 182.0
-text = "80%"
-
-[node name="_Element4" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_top = 192.0
-margin_right = 94.0
-margin_bottom = 206.0
-text = "Element IV:"
-
-[node name="Element4" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Stats"]
-margin_left = 114.0
-margin_top = 192.0
-margin_right = 142.0
-margin_bottom = 206.0
-text = "20%"
-
-[node name="NewGame" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 215.0
-margin_right = 142.0
-margin_bottom = 235.0
-text = "New Game"
-
-[node name="Pause" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 244.0
-margin_right = 142.0
-margin_bottom = 264.0
-text = "Pause"
-
-[node name="_Sound" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 273.0
-margin_right = 142.0
-margin_bottom = 287.0
-text = "Sound"
-
-[node name="Sound" type="HSlider" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 296.0
-margin_right = 142.0
-margin_bottom = 312.0
-
-[node name="_Music" type="Label" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 321.0
-margin_right = 142.0
-margin_bottom = 335.0
-text = "Music"
-
-[node name="Music" type="HSlider" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 344.0
-margin_right = 142.0
-margin_bottom = 360.0
-
-[node name="About" type="Button" parent="VBoxContainer/GameSpace/CenterContainer/VBoxContainer"]
-margin_top = 369.0
-margin_right = 142.0
-margin_bottom = 389.0
-text = "About"
-
 [node name="AboutBox" type="AcceptDialog" parent="."]
 margin_left = 579.0
 margin_top = 403.0
@@ -310,7 +23,298 @@ window_title = "About Game"
 dialog_text = "This is a game made for My First Game Jam 2020: Summer Edition.
 
 Controls:"
-[connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_button_down"]
-[connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/Pause" to="." method="_on_Pause_button_down"]
-[connection signal="button_down" from="VBoxContainer/GameSpace/CenterContainer/VBoxContainer/About" to="." method="_on_About_button_down"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 369.0
+margin_top = 88.0
+margin_right = 1231.0
+margin_bottom = 811.0
+
+[node name="Left" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 640.0
+margin_bottom = 723.0
+
+[node name="GameSpace" type="HBoxContainer" parent="HBoxContainer/Left"]
+margin_right = 640.0
+margin_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Left/GameSpace"]
+margin_right = 640.0
+margin_bottom = 64.0
+
+[node name="Background" type="ColorRect" parent="HBoxContainer/Left/GameSpace/MarginContainer"]
+margin_right = 640.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 640, 0 )
+color = Color( 0, 0, 0, 0.658824 )
+
+[node name="Grid" type="GridContainer" parent="HBoxContainer/Left/GameSpace/MarginContainer"]
+margin_right = 640.0
+margin_bottom = 64.0
+columns = 10
+
+[node name="Cell" type="TextureRect" parent="HBoxContainer/Left/GameSpace/MarginContainer/Grid"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 1 )
+
+[node name="Right" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 644.0
+margin_right = 862.0
+margin_bottom = 723.0
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Right"]
+margin_right = 218.0
+margin_bottom = 723.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Right/CenterContainer"]
+margin_right = 218.0
+margin_bottom = 723.0
+custom_constants/separation = 9
+
+[node name="Stats" type="GridContainer" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
+margin_right = 218.0
+margin_bottom = 540.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 20
+columns = 2
+
+[node name="NextBlock" type="GridContainer" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_right = 129.0
+margin_bottom = 324.0
+custom_constants/vseparation = 1
+custom_constants/hseparation = 1
+columns = 2
+
+[node name="Cell" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 1 )
+
+[node name="Cell2" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_left = 65.0
+margin_right = 129.0
+margin_bottom = 64.0
+texture = ExtResource( 1 )
+
+[node name="Cell3" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_top = 65.0
+margin_right = 64.0
+margin_bottom = 129.0
+texture = ExtResource( 1 )
+
+[node name="Cell4" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_left = 65.0
+margin_top = 65.0
+margin_right = 129.0
+margin_bottom = 129.0
+texture = ExtResource( 1 )
+
+[node name="Cell5" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_top = 130.0
+margin_right = 64.0
+margin_bottom = 194.0
+texture = ExtResource( 1 )
+
+[node name="Cell6" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_left = 65.0
+margin_top = 130.0
+margin_right = 129.0
+margin_bottom = 194.0
+texture = ExtResource( 1 )
+
+[node name="Cell7" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_top = 195.0
+margin_right = 64.0
+margin_bottom = 259.0
+texture = ExtResource( 1 )
+
+[node name="Cell8" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_left = 65.0
+margin_top = 195.0
+margin_right = 129.0
+margin_bottom = 259.0
+texture = ExtResource( 1 )
+
+[node name="Cell9" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_top = 260.0
+margin_right = 64.0
+margin_bottom = 324.0
+texture = ExtResource( 1 )
+
+[node name="Cell10" type="TextureRect" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats/NextBlock"]
+margin_left = 65.0
+margin_top = 260.0
+margin_right = 129.0
+margin_bottom = 324.0
+texture = ExtResource( 1 )
+
+[node name="_NextBlock" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 155.0
+margin_right = 218.0
+margin_bottom = 169.0
+text = "Next Block"
+
+[node name="_Level" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_top = 334.0
+margin_right = 129.0
+margin_bottom = 348.0
+text = "Level:"
+
+[node name="Level" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 334.0
+margin_right = 218.0
+margin_bottom = 348.0
+text = "1"
+
+[node name="_Score" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_top = 358.0
+margin_right = 129.0
+margin_bottom = 372.0
+text = "Score:"
+
+[node name="Score" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 358.0
+margin_right = 218.0
+margin_bottom = 372.0
+text = "0"
+
+[node name="_HighScore" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_top = 382.0
+margin_right = 129.0
+margin_bottom = 396.0
+text = "High Score:"
+
+[node name="HighScore" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 382.0
+margin_right = 218.0
+margin_bottom = 396.0
+text = "0"
+
+[node name="_Lines" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_top = 406.0
+margin_right = 129.0
+margin_bottom = 420.0
+text = "Lines"
+
+[node name="Lines" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 406.0
+margin_right = 218.0
+margin_bottom = 420.0
+text = "0"
+
+[node name="_MainProgress " type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_top = 430.0
+margin_right = 129.0
+margin_bottom = 444.0
+text = "Main Progress:"
+
+[node name="MainProgress" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 430.0
+margin_right = 218.0
+margin_bottom = 444.0
+text = "50%"
+
+[node name="_Element1" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_top = 454.0
+margin_right = 129.0
+margin_bottom = 468.0
+text = "Element I:"
+
+[node name="Element1" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 454.0
+margin_right = 218.0
+margin_bottom = 468.0
+text = "23%"
+
+[node name="_Element2" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_top = 478.0
+margin_right = 129.0
+margin_bottom = 492.0
+text = "Element II:"
+
+[node name="Element 2" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 478.0
+margin_right = 218.0
+margin_bottom = 492.0
+text = "62%"
+
+[node name="_Element3" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_top = 502.0
+margin_right = 129.0
+margin_bottom = 516.0
+text = "Element III:"
+
+[node name="Element3" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 502.0
+margin_right = 218.0
+margin_bottom = 516.0
+text = "80%"
+
+[node name="_Element4" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_top = 526.0
+margin_right = 129.0
+margin_bottom = 540.0
+text = "Element IV:"
+
+[node name="Element4" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+margin_left = 149.0
+margin_top = 526.0
+margin_right = 218.0
+margin_bottom = 540.0
+text = "20%"
+
+[node name="NewGame" type="Button" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
+margin_top = 549.0
+margin_right = 218.0
+margin_bottom = 569.0
+text = "New Game"
+
+[node name="Pause" type="Button" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
+margin_top = 578.0
+margin_right = 218.0
+margin_bottom = 598.0
+text = "Pause"
+
+[node name="_Sound" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
+margin_top = 607.0
+margin_right = 218.0
+margin_bottom = 621.0
+text = "Sound"
+
+[node name="Sound" type="HSlider" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
+margin_top = 630.0
+margin_right = 218.0
+margin_bottom = 646.0
+
+[node name="_Music" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
+margin_top = 655.0
+margin_right = 218.0
+margin_bottom = 669.0
+text = "Music"
+
+[node name="Music" type="HSlider" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
+margin_top = 678.0
+margin_right = 218.0
+margin_bottom = 694.0
+
+[node name="About" type="Button" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
+margin_top = 703.0
+margin_right = 218.0
+margin_bottom = 723.0
+text = "About"
 [connection signal="popup_hide" from="AboutBox" to="." method="_on_AboutBox_popup_hide"]
+[connection signal="button_down" from="HBoxContainer/Right/CenterContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_button_down"]
+[connection signal="button_down" from="HBoxContainer/Right/CenterContainer/VBoxContainer/Pause" to="." method="_on_Pause_button_down"]
+[connection signal="button_down" from="HBoxContainer/Right/CenterContainer/VBoxContainer/About" to="." method="_on_About_button_down"]

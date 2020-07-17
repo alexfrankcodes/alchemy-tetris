@@ -5,6 +5,8 @@ class_name ShapeData
 var color: Color
 var grid: Array
 var coors: Array
+var texture: Texture
+
 
 func rotate_left():
 	rotate_grid(-1, 1)

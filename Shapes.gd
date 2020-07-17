@@ -17,6 +17,7 @@ func get_shape() -> ShapeData:
 	#this we will need to find another solution.
 	s.coors = _shapes[_index].coors
 	s.grid = _shapes[_index].grid
+	s.texture = _shapes[_index].texture
 	return s
 
 
