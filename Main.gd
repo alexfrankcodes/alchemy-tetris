@@ -42,7 +42,7 @@ func _ready():
 
 func clear_grid():
 	grid.clear()
-	grid.resize(gui.grid.get_child_count())
+	grid.resize(100)
 	for i in grid.size():
 		grid[i] = false
 	gui.clear_all_cells()
@@ -127,13 +127,11 @@ func _button_pressed(button_name):
 		
 		"Pause":
 			if state == PLAYING:
-				gui.set_button_text("Pause", "Resume")
 				state = PAUSED
 				pause(true) 
 				if _music_is_on():
 					_music(PAUSE)
 			else:
-				gui.set_button_text("Pause", "Pause")
 				state = PLAYING
 				pause(false)
 				if _music_is_on():
@@ -215,7 +213,7 @@ func new_shape():
 	level_up()
 
 func add_shape_to_grid():
-	place_shape(pos, true, false, shape.color)
+	place_shape(pos, true, false, shape.color, shape.texture)
 
 func remove_shape_from_grid():
 	place_shape(pos, true)
@@ -223,7 +221,7 @@ func remove_shape_from_grid():
 func lock_shape_to_grid():
 	place_shape(pos, false, true)
 
-func place_shape(index, add_tiles = false, lock = false, color = Color(0)):
+func place_shape(index, add_tiles = false, lock = false, color = Color(0), texture = Texture):
 	var ok = true
 	var size = shape.coors.size()
 	var offset = shape.coors[0]
@@ -242,6 +240,7 @@ func place_shape(index, add_tiles = false, lock = false, color = Color(0)):
 						break
 					if add_tiles and grid_pos >= 0:
 						gui.grid.get_child(grid_pos).modulate = color
+						gui.grid.get_child(grid_pos).texture = texture
 		y += 1
 	return ok
 

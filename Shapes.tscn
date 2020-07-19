@@ -1,2110 +1,504 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Shapes.gd" type="Script" id=1]
-[ext_resource path="res://Art/Tiles/tile.png" type="Texture" id=2]
+[ext_resource path="res://Art/Tiles/Blank.png" type="Texture" id=2]
 [ext_resource path="res://Art/Tiles/fire.png" type="Texture" id=3]
 [ext_resource path="res://Art/Tiles/lightning.png" type="Texture" id=4]
 [ext_resource path="res://Art/Tiles/plant.png" type="Texture" id=5]
 [ext_resource path="res://Art/Tiles/water.png" type="Texture" id=6]
 
-[node name="Shapes" type="GridContainer"]
-visible = false
-margin_right = 556.0
-margin_bottom = 1800.0
+[node name="GridContainer" type="GridContainer"]
 columns = 4
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dot1" type="GridContainer" parent="."]
-margin_right = 136.0
-margin_bottom = 100.0
+[node name="dot_fire" type="GridContainer" parent="."]
+margin_right = 200.0
+margin_bottom = 132.0
 
-[node name="TextureRect2" type="TextureRect" parent="dot1"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect3" type="TextureRect" parent="dot1"]
-modulate = Color( 0.164706, 0.172549, 1, 0 )
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 100.0
-texture = ExtResource( 2 )
-
-[node name="dot2" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_right = 276.0
-margin_bottom = 100.0
-
-[node name="TextureRect" type="TextureRect" parent="dot2"]
+[node name="TextureRect" type="TextureRect" parent="dot_fire"]
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 3 )
 
-[node name="TextureRect2" type="TextureRect" parent="dot2"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 100.0
-texture = ExtResource( 2 )
-
-[node name="dot3" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_right = 416.0
-margin_bottom = 100.0
-
-[node name="TextureRect" type="TextureRect" parent="dot3"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect2" type="TextureRect" parent="dot3"]
+[node name="TextureRect2" type="TextureRect" parent="dot_fire"]
+modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 68.0
 margin_right = 64.0
-margin_bottom = 100.0
+margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="dot4" type="GridContainer" parent="."]
-margin_left = 420.0
-margin_right = 556.0
-margin_bottom = 100.0
+[node name="dot_water" type="GridContainer" parent="."]
+margin_left = 204.0
+margin_right = 404.0
+margin_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="dot4"]
+[node name="TextureRect" type="TextureRect" parent="dot_water"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect2" type="TextureRect" parent="dot_water"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="dot_plant" type="GridContainer" parent="."]
+margin_left = 408.0
+margin_right = 608.0
+margin_bottom = 132.0
+
+[node name="TextureRect" type="TextureRect" parent="dot_plant"]
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 5 )
 
-[node name="TextureRect2" type="TextureRect" parent="dot4"]
-modulate = Color( 1, 1, 0, 0 )
+[node name="TextureRect2" type="TextureRect" parent="dot_plant"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 68.0
 margin_right = 64.0
-margin_bottom = 100.0
+margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="domino red" type="GridContainer" parent="."]
-margin_top = 104.0
-margin_right = 100.0
-margin_bottom = 236.0
+[node name="dot_lightning" type="GridContainer" parent="."]
+margin_left = 612.0
+margin_right = 812.0
+margin_bottom = 132.0
+
+[node name="TextureRect" type="TextureRect" parent="dot_lightning"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect2" type="TextureRect" parent="dot_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="domino_fire" type="GridContainer" parent="."]
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 268.0
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="domino red"]
+[node name="TextureRect" type="TextureRect" parent="domino_fire"]
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 3 )
 
-[node name="TextureRect14" type="TextureRect" parent="domino red"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect2" type="TextureRect" parent="domino_fire"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect2" type="TextureRect" parent="domino red"]
+[node name="TextureRect3" type="TextureRect" parent="domino_fire"]
 margin_top = 68.0
 margin_right = 64.0
 margin_bottom = 132.0
 texture = ExtResource( 3 )
 
-[node name="TextureRect15" type="TextureRect" parent="domino red"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect4" type="TextureRect" parent="domino_fire"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.0
 margin_top = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="domino yellow" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_top = 104.0
-margin_right = 240.0
-margin_bottom = 236.0
+[node name="domino_water" type="GridContainer" parent="."]
+margin_left = 204.0
+margin_top = 136.0
+margin_right = 404.0
+margin_bottom = 268.0
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="domino yellow"]
+[node name="TextureRect" type="TextureRect" parent="domino_water"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 
-[node name="TextureRect16" type="TextureRect" parent="domino yellow"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect2" type="TextureRect" parent="domino_water"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect2" type="TextureRect" parent="domino yellow"]
+[node name="TextureRect3" type="TextureRect" parent="domino_water"]
 margin_top = 68.0
 margin_right = 64.0
 margin_bottom = 132.0
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 
-[node name="TextureRect17" type="TextureRect" parent="domino yellow"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect4" type="TextureRect" parent="domino_water"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.0
 margin_top = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="domino green" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_top = 104.0
-margin_right = 416.0
-margin_bottom = 236.0
+[node name="domino_plant" type="GridContainer" parent="."]
+margin_left = 408.0
+margin_top = 136.0
+margin_right = 608.0
+margin_bottom = 268.0
 columns = 2
 
-[node name="TextureRect2" type="TextureRect" parent="domino green"]
+[node name="TextureRect" type="TextureRect" parent="domino_plant"]
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 5 )
 
-[node name="TextureRect18" type="TextureRect" parent="domino green"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect2" type="TextureRect" parent="domino_plant"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect3" type="TextureRect" parent="domino green"]
+[node name="TextureRect3" type="TextureRect" parent="domino_plant"]
 margin_top = 68.0
 margin_right = 64.0
 margin_bottom = 132.0
 texture = ExtResource( 5 )
 
-[node name="TextureRect19" type="TextureRect" parent="domino green"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect4" type="TextureRect" parent="domino_plant"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.0
 margin_top = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="domino blue" type="GridContainer" parent="."]
-margin_left = 420.0
-margin_top = 104.0
-margin_right = 556.0
-margin_bottom = 236.0
+[node name="domino_lightning" type="GridContainer" parent="."]
+margin_left = 612.0
+margin_top = 136.0
+margin_right = 812.0
+margin_bottom = 268.0
 columns = 2
 
-[node name="TextureRect2" type="TextureRect" parent="domino blue"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect21" type="TextureRect" parent="domino blue"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 68.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="domino blue"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect20" type="TextureRect" parent="domino blue"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 68.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="domino RY1" type="GridContainer" parent="."]
-margin_top = 240.0
-margin_right = 136.0
-margin_bottom = 372.0
-columns = 2
-
-[node name="TextureRect" type="TextureRect" parent="domino RY1"]
+[node name="TextureRect" type="TextureRect" parent="domino_lightning"]
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 4 )
 
-[node name="TextureRect12" type="TextureRect" parent="domino RY1"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect2" type="TextureRect" parent="domino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect2" type="TextureRect" parent="domino RY1"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect13" type="TextureRect" parent="domino RY1"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 68.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="domino BY" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_top = 240.0
-margin_right = 276.0
-margin_bottom = 372.0
-columns = 2
-
-[node name="TextureRect3" type="TextureRect" parent="domino BY"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect10" type="TextureRect" parent="domino BY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 68.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect2" type="TextureRect" parent="domino BY"]
+[node name="TextureRect3" type="TextureRect" parent="domino_lightning"]
 margin_top = 68.0
 margin_right = 64.0
 margin_bottom = 132.0
 texture = ExtResource( 4 )
 
-[node name="TextureRect11" type="TextureRect" parent="domino BY"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect4" type="TextureRect" parent="domino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.0
 margin_top = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="domino YG1" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_top = 240.0
-margin_right = 416.0
-margin_bottom = 372.0
-columns = 2
+[node name="tromino_fire" type="GridContainer" parent="."]
+margin_top = 272.0
+margin_right = 200.0
+margin_bottom = 472.0
+columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="domino YG1"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect8" type="TextureRect" parent="domino YG1"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 68.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect2" type="TextureRect" parent="domino YG1"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect9" type="TextureRect" parent="domino YG1"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 68.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="domino BR" type="GridContainer" parent="."]
-margin_left = 420.0
-margin_top = 240.0
-margin_right = 556.0
-margin_bottom = 372.0
-columns = 2
-
-[node name="TextureRect3" type="TextureRect" parent="domino BR"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect6" type="TextureRect" parent="domino BR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 68.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="domino BR"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect7" type="TextureRect" parent="domino BR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 68.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="domino YG2" type="GridContainer" parent="."]
-margin_top = 376.0
-margin_right = 136.0
-margin_bottom = 576.0
-columns = 2
-
-[node name="TextureRect3" type="TextureRect" parent="domino YG2"]
+[node name="TextureRect" type="TextureRect" parent="tromino_fire"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 3 )
 
-[node name="TextureRect4" type="TextureRect" parent="domino YG2"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect2" type="TextureRect" parent="tromino_fire"]
 margin_left = 68.0
-margin_right = 100.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect3" type="TextureRect" parent="tromino_fire"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_right = 200.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect2" type="TextureRect" parent="domino YG2"]
+[node name="TextureRect4" type="TextureRect" parent="tromino_fire"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 68.0
 margin_right = 64.0
 margin_bottom = 132.0
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 
-[node name="TextureRect5" type="TextureRect" parent="domino YG2"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect5" type="TextureRect" parent="tromino_fire"]
 margin_left = 68.0
 margin_top = 68.0
-margin_right = 100.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect6" type="TextureRect" parent="tromino_fire"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
 margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="domino RB2" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_top = 376.0
-margin_right = 276.0
-margin_bottom = 576.0
-columns = 2
+[node name="TextureRect7" type="TextureRect" parent="tromino_fire"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
 
-[node name="TextureRect7" type="TextureRect" parent="domino RB2"]
+[node name="TextureRect8" type="TextureRect" parent="tromino_fire"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect9" type="TextureRect" parent="tromino_fire"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="tromino_water" type="GridContainer" parent="."]
+margin_left = 204.0
+margin_top = 272.0
+margin_right = 404.0
+margin_bottom = 472.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="tromino_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect2" type="TextureRect" parent="tromino_water"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect3" type="TextureRect" parent="tromino_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="tromino_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="tromino_water"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect6" type="TextureRect" parent="tromino_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="tromino_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="tromino_water"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect9" type="TextureRect" parent="tromino_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="tromino_plant" type="GridContainer" parent="."]
+margin_left = 408.0
+margin_top = 272.0
+margin_right = 608.0
+margin_bottom = 472.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="tromino_plant"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 5 )
 
-[node name="TextureRect6" type="TextureRect" parent="domino RB2"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect2" type="TextureRect" parent="tromino_plant"]
 margin_left = 68.0
-margin_right = 100.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect3" type="TextureRect" parent="tromino_plant"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_right = 200.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect3" type="TextureRect" parent="domino RB2"]
+[node name="TextureRect4" type="TextureRect" parent="tromino_plant"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 68.0
 margin_right = 64.0
 margin_bottom = 132.0
-texture = ExtResource( 6 )
+texture = ExtResource( 2 )
 
-[node name="TextureRect8" type="TextureRect" parent="domino RB2"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect5" type="TextureRect" parent="tromino_plant"]
 margin_left = 68.0
 margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I GBB" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_top = 376.0
-margin_right = 416.0
-margin_bottom = 576.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I GBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I GBB"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I GBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I GBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="Tromino I GBB"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I GBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I GBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I GBB"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I GBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I RBB" type="GridContainer" parent="."]
-margin_left = 420.0
-margin_top = 376.0
-margin_right = 556.0
-margin_bottom = 576.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I RBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I RBB"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I RBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I RBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="Tromino I RBB"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I RBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I RBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I RBB"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I RBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I YBB" type="GridContainer" parent="."]
-margin_top = 580.0
-margin_right = 136.0
-margin_bottom = 780.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I YBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I YBB"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I YBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I YBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="Tromino I YBB"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I YBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I YBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I YBB"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I YBB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  GGB" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_top = 580.0
-margin_right = 276.0
-margin_bottom = 780.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  GGB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  GGB"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  GGB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  GGB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  GGB"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 132.0
 texture = ExtResource( 5 )
 
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  GGB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
+[node name="TextureRect6" type="TextureRect" parent="tromino_plant"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
 margin_top = 68.0
-margin_right = 136.0
+margin_right = 200.0
 margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  GGB"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect7" type="TextureRect" parent="tromino_plant"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 136.0
-margin_right = 32.0
+margin_right = 64.0
 margin_bottom = 200.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  GGB"]
-margin_left = 36.0
+[node name="TextureRect8" type="TextureRect" parent="tromino_plant"]
+margin_left = 68.0
 margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect13" type="TextureRect" parent="Tromino I  GGB"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  GGR" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_top = 580.0
-margin_right = 416.0
-margin_bottom = 780.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  GGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  GGR"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  GGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  GGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  GGR"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  GGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  GGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  GGR"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect13" type="TextureRect" parent="Tromino I  GGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  GGY" type="GridContainer" parent="."]
-margin_left = 420.0
-margin_top = 580.0
-margin_right = 556.0
-margin_bottom = 780.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  GGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  GGY"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  GGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  GGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  GGY"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  GGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  GGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  GGY"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect13" type="TextureRect" parent="Tromino I  GGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  GRR" type="GridContainer" parent="."]
-margin_top = 784.0
-margin_right = 136.0
-margin_bottom = 984.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  GRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  GRR"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  GRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  GRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  GRR"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  GRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  GRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  GRR"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  GRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  YRR" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_top = 784.0
-margin_right = 276.0
-margin_bottom = 984.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  YRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  YRR"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  YRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  YRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  YRR"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  YRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  YRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  YRR"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  YRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  BRR" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_top = 784.0
-margin_right = 416.0
-margin_bottom = 984.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  BRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  BRR"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  BRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  BRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  BRR"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  BRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  BRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  BRR"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  BRR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  GYY" type="GridContainer" parent="."]
-margin_left = 420.0
-margin_top = 784.0
-margin_right = 556.0
-margin_bottom = 984.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  GYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  GYY"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  GYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  GYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  GYY"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  GYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  GYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  GYY"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  GYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  RYY" type="GridContainer" parent="."]
-margin_top = 988.0
-margin_right = 136.0
-margin_bottom = 1188.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  RYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  RYY"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  RYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  RYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  RYY"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  RYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  RYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  RYY"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  RYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  BYY" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_top = 988.0
-margin_right = 276.0
-margin_bottom = 1188.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  BYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  BYY"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  BYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  BYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  BYY"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  BYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  BYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  BYY"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  BYY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  BYR" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_top = 988.0
-margin_right = 416.0
-margin_bottom = 1188.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  BYR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  BYR"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  BYR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  BYR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  BYR"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  BYR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  BYR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  BYR"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  BYR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  BYG" type="GridContainer" parent="."]
-margin_left = 420.0
-margin_top = 988.0
-margin_right = 556.0
-margin_bottom = 1188.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  BYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  BYG"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  BYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  BYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  BYG"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  BYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  BYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  BYG"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 200.0
 texture = ExtResource( 5 )
 
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  BYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
+[node name="TextureRect9" type="TextureRect" parent="tromino_plant"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
 margin_top = 136.0
-margin_right = 136.0
+margin_right = 200.0
 margin_bottom = 200.0
 texture = ExtResource( 2 )
 
-[node name="Tromino I  RYG" type="GridContainer" parent="."]
-margin_top = 1192.0
-margin_right = 136.0
-margin_bottom = 1392.0
+[node name="tromino_lightning" type="GridContainer" parent="."]
+margin_left = 612.0
+margin_top = 272.0
+margin_right = 812.0
+margin_bottom = 472.0
 columns = 3
 
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  RYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  RYG"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  RYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  RYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  RYG"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  RYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  RYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  RYG"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  RYG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  BRG" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_top = 1192.0
-margin_right = 276.0
-margin_bottom = 1392.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  BRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  BRG"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  BRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  BRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  BRG"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  BRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  BRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  BRG"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  BRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  YRG" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_top = 1192.0
-margin_right = 416.0
-margin_bottom = 1392.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  YRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  YRG"]
-margin_left = 36.0
-margin_right = 100.0
+[node name="TextureRect" type="TextureRect" parent="tromino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 4 )
 
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  YRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  YRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  YRG"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  YRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  YRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  YRG"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  YRG"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  BRY" type="GridContainer" parent="."]
-margin_left = 420.0
-margin_top = 1192.0
-margin_right = 556.0
-margin_bottom = 1392.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  BRY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  BRY"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  BRY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  BRY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  BRY"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  BRY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  BRY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  BRY"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 4 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  BRY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  BGR" type="GridContainer" parent="."]
-margin_top = 1396.0
-margin_right = 136.0
-margin_bottom = 1596.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  BGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  BGR"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  BGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  BGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  BGR"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  BGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  BGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  BGR"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  BGR"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  BGY" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_top = 1396.0
-margin_right = 276.0
-margin_bottom = 1596.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  BGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  BGY"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  BGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  BGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  BGY"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  BGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  BGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  BGY"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  BGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  RGY" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_top = 1396.0
-margin_right = 416.0
-margin_bottom = 1596.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  RGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  RGY"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 3 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  RGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  RGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  RGY"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  RGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  RGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  RGY"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  RGY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  GBY" type="GridContainer" parent="."]
-margin_left = 420.0
-margin_top = 1396.0
-margin_right = 556.0
-margin_bottom = 1596.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  GBY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  GBY"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  GBY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  GBY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  GBY"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  GBY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  GBY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  GBY"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  GBY"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  GBY2" type="GridContainer" parent="."]
-margin_top = 1600.0
-margin_right = 136.0
-margin_bottom = 1800.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  GBY2"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  GBY2"]
-margin_left = 36.0
-margin_right = 100.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  GBY2"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  GBY2"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 68.0
-margin_right = 32.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  GBY2"]
-margin_left = 36.0
-margin_top = 68.0
-margin_right = 100.0
-margin_bottom = 132.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  GBY2"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 132.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  GBY2"]
-modulate = Color( 1, 0, 0, 0 )
-margin_top = 136.0
-margin_right = 32.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  GBY2"]
-margin_left = 36.0
-margin_top = 136.0
-margin_right = 100.0
-margin_bottom = 200.0
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  GBY2"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_top = 136.0
-margin_right = 136.0
-margin_bottom = 200.0
-texture = ExtResource( 2 )
-
-[node name="Tromino I  GBY3" type="GridContainer" parent="."]
-margin_left = 140.0
-margin_top = 1600.0
-margin_right = 276.0
-margin_bottom = 1800.0
-columns = 3
-
-[node name="TextureRect6" type="TextureRect" parent="Tromino I  GBY3"]
-modulate = Color( 1, 0, 0, 0 )
-margin_right = 32.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect4" type="TextureRect" parent="Tromino I  GBY3"]
-margin_left = 36.0
-margin_right = 100.0
+[node name="TextureRect2" type="TextureRect" parent="tromino_lightning"]
+margin_left = 68.0
+margin_right = 132.0
 margin_bottom = 64.0
 texture = ExtResource( 4 )
 
-[node name="TextureRect10" type="TextureRect" parent="Tromino I  GBY3"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
-margin_right = 136.0
+[node name="TextureRect3" type="TextureRect" parent="tromino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_right = 200.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect9" type="TextureRect" parent="Tromino I  GBY3"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect4" type="TextureRect" parent="tromino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 68.0
-margin_right = 32.0
+margin_right = 64.0
 margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect7" type="TextureRect" parent="Tromino I  GBY3"]
-margin_left = 36.0
+[node name="TextureRect5" type="TextureRect" parent="tromino_lightning"]
+margin_left = 68.0
 margin_top = 68.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 132.0
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 
-[node name="TextureRect12" type="TextureRect" parent="Tromino I  GBY3"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
+[node name="TextureRect6" type="TextureRect" parent="tromino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
 margin_top = 68.0
-margin_right = 136.0
+margin_right = 200.0
 margin_bottom = 132.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect8" type="TextureRect" parent="Tromino I  GBY3"]
-modulate = Color( 1, 0, 0, 0 )
+[node name="TextureRect7" type="TextureRect" parent="tromino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 136.0
-margin_right = 32.0
+margin_right = 64.0
 margin_bottom = 200.0
 texture = ExtResource( 2 )
 
-[node name="TextureRect5" type="TextureRect" parent="Tromino I  GBY3"]
-margin_left = 36.0
+[node name="TextureRect8" type="TextureRect" parent="tromino_lightning"]
+margin_left = 68.0
 margin_top = 136.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 200.0
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource( 4 )
 
-[node name="TextureRect11" type="TextureRect" parent="Tromino I  GBY3"]
-modulate = Color( 1, 0, 0, 0 )
-margin_left = 104.0
+[node name="TextureRect9" type="TextureRect" parent="tromino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
 margin_top = 136.0
-margin_right = 136.0
+margin_right = 200.0
 margin_bottom = 200.0
 texture = ExtResource( 2 )

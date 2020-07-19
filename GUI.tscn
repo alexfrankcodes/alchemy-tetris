@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Art/Tiles/plant.png" type="Texture" id=1]
 [ext_resource path="res://GUI.gd" type="Script" id=2]
+[ext_resource path="res://Art/Icons/Sound.png" type="Texture" id=3]
+[ext_resource path="res://Art/Icons/NewGame.png" type="Texture" id=4]
+[ext_resource path="res://Art/Icons/Pause.png" type="Texture" id=5]
+[ext_resource path="res://Art/Icons/Music.png" type="Texture" id=6]
 
 [node name="GUI" type="CenterContainer"]
 anchor_top = -0.00104872
@@ -25,32 +29,35 @@ dialog_text = "This is a game made for My First Game Jam 2020: Summer Edition.
 Controls:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 369.0
-margin_top = 88.0
-margin_right = 1231.0
-margin_bottom = 811.0
+margin_left = 351.0
+margin_top = 84.0
+margin_right = 1249.0
+margin_bottom = 814.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Left" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 640.0
-margin_bottom = 723.0
+margin_bottom = 730.0
 
 [node name="GameSpace" type="HBoxContainer" parent="HBoxContainer/Left"]
 margin_right = 640.0
-margin_bottom = 64.0
+margin_bottom = 640.0
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Left/GameSpace"]
 margin_right = 640.0
-margin_bottom = 64.0
+margin_bottom = 640.0
 
 [node name="Background" type="ColorRect" parent="HBoxContainer/Left/GameSpace/MarginContainer"]
 margin_right = 640.0
-margin_bottom = 64.0
+margin_bottom = 640.0
 rect_min_size = Vector2( 640, 0 )
 color = Color( 0, 0, 0, 0.658824 )
 
 [node name="Grid" type="GridContainer" parent="HBoxContainer/Left/GameSpace/MarginContainer"]
 margin_right = 640.0
-margin_bottom = 64.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 640, 640 )
 columns = 10
 
 [node name="Cell" type="TextureRect" parent="HBoxContainer/Left/GameSpace/MarginContainer/Grid"]
@@ -60,18 +67,21 @@ texture = ExtResource( 1 )
 
 [node name="Right" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 644.0
-margin_right = 862.0
-margin_bottom = 723.0
+margin_right = 898.0
+margin_bottom = 730.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Right"]
-margin_right = 218.0
-margin_bottom = 723.0
+margin_right = 254.0
+margin_bottom = 665.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Right/CenterContainer"]
-margin_right = 218.0
-margin_bottom = 723.0
+margin_left = 18.0
+margin_right = 236.0
+margin_bottom = 665.0
 custom_constants/separation = 9
 
 [node name="Stats" type="GridContainer" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
@@ -214,107 +224,123 @@ text = "0"
 margin_top = 430.0
 margin_right = 129.0
 margin_bottom = 444.0
-text = "Main Progress:"
+text = "Total:"
 
-[node name="MainProgress" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+[node name="MainProgress" type="ProgressBar" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_left = 149.0
 margin_top = 430.0
 margin_right = 218.0
 margin_bottom = 444.0
-text = "50%"
 
-[node name="_Element1" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+[node name="_FireProgress" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_top = 454.0
 margin_right = 129.0
 margin_bottom = 468.0
-text = "Element I:"
+text = "Fire:"
 
-[node name="Element1" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+[node name="FireProgress" type="ProgressBar" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_left = 149.0
 margin_top = 454.0
 margin_right = 218.0
 margin_bottom = 468.0
-text = "23%"
 
-[node name="_Element2" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+[node name="_WaterProgress" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_top = 478.0
 margin_right = 129.0
 margin_bottom = 492.0
-text = "Element II:"
+text = "Water"
 
-[node name="Element 2" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+[node name="WaterProgress" type="ProgressBar" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_left = 149.0
 margin_top = 478.0
 margin_right = 218.0
 margin_bottom = 492.0
-text = "62%"
 
-[node name="_Element3" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+[node name="_PlantProgress" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_top = 502.0
 margin_right = 129.0
 margin_bottom = 516.0
-text = "Element III:"
+text = "Plant:"
 
-[node name="Element3" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+[node name="PlantProgress" type="ProgressBar" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_left = 149.0
 margin_top = 502.0
 margin_right = 218.0
 margin_bottom = 516.0
-text = "80%"
 
-[node name="_Element4" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+[node name="_LightningProgress" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_top = 526.0
 margin_right = 129.0
 margin_bottom = 540.0
-text = "Element IV:"
+text = "Lightning:"
 
-[node name="Element4" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
+[node name="LightningProgress" type="ProgressBar" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_left = 149.0
 margin_top = 526.0
 margin_right = 218.0
 margin_bottom = 540.0
-text = "20%"
-
-[node name="NewGame" type="Button" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
-margin_top = 549.0
-margin_right = 218.0
-margin_bottom = 569.0
-text = "New Game"
-
-[node name="Pause" type="Button" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
-margin_top = 578.0
-margin_right = 218.0
-margin_bottom = 598.0
-text = "Pause"
 
 [node name="_Sound" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
-margin_top = 607.0
+margin_top = 549.0
 margin_right = 218.0
-margin_bottom = 621.0
+margin_bottom = 563.0
 text = "Sound"
 
 [node name="Sound" type="HSlider" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
-margin_top = 630.0
+margin_top = 572.0
 margin_right = 218.0
-margin_bottom = 646.0
+margin_bottom = 588.0
 
 [node name="_Music" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
-margin_top = 655.0
+margin_top = 597.0
 margin_right = 218.0
-margin_bottom = 669.0
+margin_bottom = 611.0
 text = "Music"
 
 [node name="Music" type="HSlider" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
-margin_top = 678.0
+margin_top = 620.0
 margin_right = 218.0
-margin_bottom = 694.0
+margin_bottom = 636.0
 
 [node name="About" type="Button" parent="HBoxContainer/Right/CenterContainer/VBoxContainer"]
-margin_top = 703.0
+margin_top = 645.0
 margin_right = 218.0
-margin_bottom = 723.0
+margin_bottom = 665.0
 text = "About"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Right"]
+margin_top = 669.0
+margin_right = 254.0
+margin_bottom = 730.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="NewGame" type="TextureButton" parent="HBoxContainer/Right/HBoxContainer2"]
+margin_right = 60.0
+margin_bottom = 61.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 4 )
+
+[node name="Pause" type="TextureButton" parent="HBoxContainer/Right/HBoxContainer2"]
+margin_left = 64.0
+margin_right = 125.0
+margin_bottom = 61.0
+texture_normal = ExtResource( 5 )
+
+[node name="Music" type="TextureButton" parent="HBoxContainer/Right/HBoxContainer2"]
+margin_left = 129.0
+margin_right = 189.0
+margin_bottom = 61.0
+texture_normal = ExtResource( 6 )
+
+[node name="Sound" type="TextureButton" parent="HBoxContainer/Right/HBoxContainer2"]
+margin_left = 193.0
+margin_right = 254.0
+margin_bottom = 61.0
+texture_normal = ExtResource( 3 )
 [connection signal="popup_hide" from="AboutBox" to="." method="_on_AboutBox_popup_hide"]
-[connection signal="button_down" from="HBoxContainer/Right/CenterContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_button_down"]
-[connection signal="button_down" from="HBoxContainer/Right/CenterContainer/VBoxContainer/Pause" to="." method="_on_Pause_button_down"]
 [connection signal="button_down" from="HBoxContainer/Right/CenterContainer/VBoxContainer/About" to="." method="_on_About_button_down"]
+[connection signal="button_down" from="HBoxContainer/Right/HBoxContainer2/NewGame" to="." method="_on_NewGame_button_down"]
+[connection signal="ready" from="HBoxContainer/Right/HBoxContainer2/NewGame" to="." method="_on_NewGame_ready"]
+[connection signal="button_down" from="HBoxContainer/Right/HBoxContainer2/Pause" to="." method="_on_Pause_button_down"]
