@@ -29,11 +29,10 @@ func _ready():
 		data.color = shape.modulate
 		#I anticipate we will need a function which will tally up the number of cells of each color on each row of the shape.
 		#For the row clearing function.
-		
 		var size = shape.columns
 		var s2 = size / 2
 		data.coors = range(-s2, s2 + 1)
-		
+		data.texture = shape.get_children().pop_front().texture
 		#Remove the zero coordinate for even sized grids
 		if size % 2 ==0:
 			data.coors.remove(s2)
