@@ -8,6 +8,7 @@
 [ext_resource path="res://Art/Tiles/water.png" type="Texture" id=6]
 
 [node name="GridContainer" type="GridContainer"]
+visible = false
 columns = 4
 script = ExtResource( 1 )
 __meta__ = {
@@ -91,33 +92,33 @@ margin_right = 200.0
 margin_bottom = 268.0
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="domino_fire"]
+[node name="TextureRect2" type="TextureRect" parent="domino_fire"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 3 )
 
-[node name="TextureRect2" type="TextureRect" parent="domino_fire"]
-modulate = Color( 1, 1, 1, 0 )
-self_modulate = Color( 1, 1, 1, 0 )
+[node name="TextureRect" type="TextureRect" parent="domino_fire"]
 margin_left = 68.0
 margin_right = 132.0
 margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="domino_fire"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
 texture = ExtResource( 3 )
 
 [node name="TextureRect4" type="TextureRect" parent="domino_fire"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="domino_fire"]
 margin_left = 68.0
 margin_top = 68.0
 margin_right = 132.0
 margin_bottom = 132.0
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="domino_water" type="GridContainer" parent="."]
 margin_left = 204.0
@@ -126,33 +127,36 @@ margin_right = 404.0
 margin_bottom = 268.0
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="domino_water"]
+[node name="TextureRect2" type="TextureRect" parent="domino_water"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 6 )
 
-[node name="TextureRect2" type="TextureRect" parent="domino_water"]
-modulate = Color( 1, 1, 1, 0 )
-self_modulate = Color( 1, 1, 1, 0 )
+[node name="TextureRect" type="TextureRect" parent="domino_water"]
 margin_left = 68.0
 margin_right = 132.0
 margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="domino_water"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
 texture = ExtResource( 6 )
 
 [node name="TextureRect4" type="TextureRect" parent="domino_water"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="domino_water"]
 margin_left = 68.0
 margin_top = 68.0
 margin_right = 132.0
 margin_bottom = 132.0
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="domino_plant" type="GridContainer" parent="."]
 margin_left = 408.0
@@ -161,33 +165,33 @@ margin_right = 608.0
 margin_bottom = 268.0
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="domino_plant"]
+[node name="TextureRect2" type="TextureRect" parent="domino_plant"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 5 )
 
-[node name="TextureRect2" type="TextureRect" parent="domino_plant"]
-modulate = Color( 1, 1, 1, 0 )
-self_modulate = Color( 1, 1, 1, 0 )
+[node name="TextureRect" type="TextureRect" parent="domino_plant"]
 margin_left = 68.0
 margin_right = 132.0
 margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="domino_plant"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
 texture = ExtResource( 5 )
 
 [node name="TextureRect4" type="TextureRect" parent="domino_plant"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="domino_plant"]
 margin_left = 68.0
 margin_top = 68.0
 margin_right = 132.0
 margin_bottom = 132.0
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="domino_lightning" type="GridContainer" parent="."]
 margin_left = 612.0
@@ -196,33 +200,33 @@ margin_right = 812.0
 margin_bottom = 268.0
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="domino_lightning"]
+[node name="TextureRect2" type="TextureRect" parent="domino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 4 )
 
-[node name="TextureRect2" type="TextureRect" parent="domino_lightning"]
-modulate = Color( 1, 1, 1, 0 )
-self_modulate = Color( 1, 1, 1, 0 )
+[node name="TextureRect" type="TextureRect" parent="domino_lightning"]
 margin_left = 68.0
 margin_right = 132.0
 margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="TextureRect3" type="TextureRect" parent="domino_lightning"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
 texture = ExtResource( 4 )
 
 [node name="TextureRect4" type="TextureRect" parent="domino_lightning"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="domino_lightning"]
 margin_left = 68.0
 margin_top = 68.0
 margin_right = 132.0
 margin_bottom = 132.0
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="tromino_fire" type="GridContainer" parent="."]
 margin_top = 272.0
