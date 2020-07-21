@@ -22,6 +22,7 @@ var music_position = 0.0
 # Grid variables
 var grid = []
 var cols
+#var blank_tile = TextureRect.new()
 
 #Shape variables
 var shape: ShapeData
@@ -37,12 +38,14 @@ func _ready():
 	gui.set_button_states(ENABLED)
 	cols = gui.grid.get_columns()
 	gui.reset_stats()
+	#blank_tile.set_size(Vector2(64,64))
+	#blank_tile.texture = load("res://Art/Tiles/Blank.png")
 	load_game()
 	randomize()
 
 func clear_grid():
 	grid.clear()
-	grid.resize(100)
+	grid.resize(gui.grid.get_child_count())
 	for i in grid.size():
 		grid[i] = false
 	gui.clear_all_cells()
@@ -50,7 +53,6 @@ func clear_grid():
 
 ###################### GAME STATE ######################
 func _start_game():
-	# print("Game playing")
 	state = PLAYING
 	music_position = 0.0
 	if _music_is_on():
@@ -91,7 +93,7 @@ func _game_over():
 	if _sound_is_on():
 		$SoundPlayer.play()
 	state = STOPPED
-	save_game()
+	gui.clear_all_cells()
 
 
 ###################### LEVELING SYSTEM ######################
@@ -159,9 +161,13 @@ func _button_pressed(button_name):
 
 func _input(event):
 	if state == PLAYING:
+		if event.is_action_pressed("ui_page_up"):
+			increase_level()
 		if event.is_action_pressed("ui_down"):
+			bonus = 2
 			soft_drop()
 		if event.is_action_released("ui_down"):
+			bonus = 0
 			normal_drop()
 		if event.is_action_pressed("ui_accept"):
 			hard_drop()
@@ -201,27 +207,22 @@ func hard_drop():
 
 ###################### SHAPE ######################
 func new_shape():
-	if next_shape:
-		shape = next_shape
-	else:
-		shape = Shapes.get_shape()
-	next_shape = Shapes.get_shape()
-	gui.set_next_shape(next_shape)
+	shape = Shapes.get_shape()
 	pos = START_POS
 	add_shape_to_grid()
 	normal_drop()
 	level_up()
 
 func add_shape_to_grid():
-	place_shape(pos, true, false, shape.color, shape.texture)
+	place_shape(pos, shape.texture, true, false, shape.color)
 
 func remove_shape_from_grid():
-	place_shape(pos, true)
+	place_shape(pos, shape.texture, true)
 
 func lock_shape_to_grid():
-	place_shape(pos, false, true)
+	place_shape(pos, shape.texture, false, true)
 
-func place_shape(index, add_tiles = false, lock = false, color = Color(0), texture = Texture):
+func place_shape(index, texture, add_tiles = false, lock = false, color = Color(0)):
 	var ok = true
 	var size = shape.coors.size()
 	var offset = shape.coors[0]
@@ -247,7 +248,7 @@ func place_shape(index, add_tiles = false, lock = false, color = Color(0), textu
 func move_shape(new_pos, dir = null):
 	remove_shape_from_grid()
 	dir = rotate(dir)
-	var ok = place_shape(new_pos)
+	var ok = place_shape(new_pos, shape.texture)
 	if ok:
 		pos = new_pos
 	else:

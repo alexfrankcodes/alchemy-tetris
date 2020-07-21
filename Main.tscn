@@ -5,10 +5,9 @@
 [ext_resource path="res://Art/Background.png" type="Texture" id=3]
 
 [node name="Main" type="CenterContainer"]
-pause_mode = 2
 margin_left = 1.05945
 margin_right = 1601.06
-margin_bottom = 896.0
+margin_bottom = 900.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -17,18 +16,18 @@ __meta__ = {
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+pause_mode = 2
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 351.0
-margin_top = 83.0
-margin_right = 1249.0
-margin_bottom = 813.0
+margin_left = 592.0
+margin_top = 183.0
+margin_right = 1008.0
+margin_bottom = 717.0
 grow_horizontal = 0
 grow_vertical = 0
 
 [node name="Ticker" type="Timer" parent="."]
-pause_mode = 1
 
 [node name="LeftTimer" type="Timer" parent="."]
 

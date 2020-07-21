@@ -53,8 +53,3 @@ func _get_grid(n, cells):
 			i = 0
 			row = []
 	return grid
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
