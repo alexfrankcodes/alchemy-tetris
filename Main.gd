@@ -135,13 +135,14 @@ func add_to_score(rows):
 				lightning_score += 1
 			if(square.texture.load_path == plant_texture):
 				plant_score += 1
-		print(fire_score)
-		print(water_score)
-		print(lightning_score)
-		print(plant_score)
-
+		gui.find_node("FireProgress").value = fire_score
+		gui.find_node("WaterProgress").value = water_score
+		gui.find_node("LightningProgress").value = lightning_score
+		gui.find_node("PlantProgress").value = plant_score
+	
 	total_score = fire_score + plant_score + lightning_score + water_score
 	gui.score += total_score
+	gui.find_node("MainProgress").value = total_score
 	update_high_score()
 
 func update_high_score():

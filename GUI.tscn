@@ -161,6 +161,7 @@ margin_left = 92.0
 margin_top = 96.0
 margin_right = 100.0
 margin_bottom = 110.0
+max_value = 400.0
 
 [node name="_FireProgress" type="Label" parent="HBoxContainer/Right/CenterContainer/VBoxContainer/Stats"]
 margin_top = 120.0
