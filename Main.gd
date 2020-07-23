@@ -14,6 +14,12 @@ const WAIT_TIME = 0.15
 const REPEAT_DELAY = 0.05
 const FILE_NAME = "user://tetron.json"
 
+#Texture Consts
+var fire_texture = "res://.import/fire.png-47470d6e7effe13e8b11cbe6509f7b76.stex"
+var water_texture = "res://.import/water.png-2f2e68a7019aae2aaad2eb35d95fe4b4.stex"
+var lightning_texture = "res://.import/lightning.png-8a07daa7487cffc9a3ca53a4a3d2b88b.stex"
+var plant_texture = "res://.import/plant.png-11cc93270e4fc2cb7562384c14cbca0c.stex"
+
 # Game variables
 var gui
 var state = STOPPED
@@ -29,6 +35,13 @@ var next_shape: ShapeData
 var pos = 0
 var count = 0
 var bonus = 0
+
+# Score variables
+var fire_score = 0
+var water_score = 0
+var lightning_score = 0
+var plant_score = 0
+var total_score = 0
 
 ###################### SETUP ######################
 func _ready():
@@ -107,10 +120,28 @@ func increase_level():
 
 ###################### SCORING SYSTEM ######################
 func add_to_score(rows):
-	gui.lines += rows
-	var score = 10 * int(pow(2, rows - 1))
-	print("Added %d to score" % score)
-	gui.score += score
+	
+	gui.lines += rows.size()
+	
+	for row in rows:
+		for n in range(row*10, (grid.size() - ((10%(row+1))*10))):
+			var square = gui.grid.get_child(n)
+			# Check each square and calculate score appropriately
+			if(square.texture.load_path == fire_texture):
+				fire_score += 1
+			if(square.texture.load_path == water_texture):
+				water_score += 1
+			if(square.texture.load_path == lightning_texture):
+				lightning_score += 1
+			if(square.texture.load_path == plant_texture):
+				plant_score += 1
+		print(fire_score)
+		print(water_score)
+		print(lightning_score)
+		print(plant_score)
+
+	total_score = fire_score + plant_score + lightning_score + water_score
+	gui.score += total_score
 	update_high_score()
 
 func update_high_score():
@@ -232,7 +263,6 @@ func place_shape(index, add_tiles = false, lock = false, color = Color(0)):
 		for x in size:
 			if shape.grid[y][x]:
 				var grid_pos = index + (y + offset) * cols + x + offset
-				#print(grid_pos)
 				if lock:
 					grid[grid_pos] = true
 				else:
@@ -286,10 +316,10 @@ func _music(action):
 		$MusicPlayer.stop()
 
 func _music_is_on():
-	return gui.music > gui.min_vol
+	return gui.music
 
 func _sound_is_on():
-	return gui.sound > gui.min_vol
+	return gui.sound
 
 
 ###################### TICKERS ######################
@@ -341,7 +371,7 @@ func check_rows():
 
 func remove_rows(rows):
 		var rows_moved = 0
-		add_to_score(rows.size())
+		add_to_score(rows)
 		pause()
 		if _sound_is_on():
 			$SoundPlayer.play()
