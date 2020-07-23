@@ -18,6 +18,7 @@ const FILE_NAME = "user://tetron.json"
 var gui
 var state = STOPPED
 var music_position = 0.0
+var rng = RandomNumberGenerator.new()
 
 # Grid variables
 var grid = []
@@ -238,7 +239,7 @@ func hard_drop():
 ###################### SHAPE ######################
 func new_shape():
 	shape = Shapes.get_shape()
-	pos = START_POS
+	pos = rng.randi_range(0,20)
 	add_shape_to_grid()
 	normal_drop()
 	level_up()
