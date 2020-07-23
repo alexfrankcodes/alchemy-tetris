@@ -14,12 +14,6 @@ const WAIT_TIME = 0.15
 const REPEAT_DELAY = 0.05
 const FILE_NAME = "user://tetron.json"
 
-#Texture Consts
-var fire_texture = "res://.import/fire.png-47470d6e7effe13e8b11cbe6509f7b76.stex"
-var water_texture = "res://.import/water.png-2f2e68a7019aae2aaad2eb35d95fe4b4.stex"
-var lightning_texture = "res://.import/lightning.png-8a07daa7487cffc9a3ca53a4a3d2b88b.stex"
-var plant_texture = "res://.import/plant.png-11cc93270e4fc2cb7562384c14cbca0c.stex"
-
 # Game variables
 var gui
 var state = STOPPED
@@ -48,6 +42,7 @@ var water_score = 0
 var lightning_score = 0
 var plant_score = 0
 var total_score = 0
+
 
 ###################### SETUP ######################
 func _ready():
@@ -265,6 +260,7 @@ func place_shape(index, texture, add_tiles = false, lock = false, color = Color(
 		for x in size:
 			if shape.grid[y][x]:
 				var grid_pos = index + (y + offset) * cols + x + offset
+				#print(grid_pos)
 				if lock:
 					grid[grid_pos] = true
 				else:
@@ -319,10 +315,10 @@ func _music(action):
 		$MusicPlayer.stop()
 
 func _music_is_on():
-	return gui.music
+	return gui.music > gui.min_vol
 
 func _sound_is_on():
-	return gui.sound
+	return gui.sound > gui.min_vol
 
 
 ###################### TICKERS ######################
