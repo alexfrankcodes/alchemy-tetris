@@ -2,13 +2,12 @@
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Art/Tiles/Background.png" type="Texture" id=3]
+[ext_resource path="res://Art/Background.png" type="Texture" id=3]
 
 [node name="Main" type="CenterContainer"]
-pause_mode = 2
 margin_left = 1.05945
 margin_right = 1601.06
-margin_bottom = 896.0
+margin_bottom = 900.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -17,9 +16,11 @@ __meta__ = {
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+pause_mode = 2
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 margin_left = 369.0
 margin_top = 86.0
@@ -33,9 +34,16 @@ margin_bottom = 599.0
 grow_horizontal = 0
 grow_vertical = 0
 >>>>>>> Stashed changes
+=======
+margin_left = 592.0
+margin_top = 183.0
+margin_right = 1008.0
+margin_bottom = 717.0
+grow_horizontal = 0
+grow_vertical = 0
+>>>>>>> eddad0b020358486e6fbdd4882d66816ed627d45
 
 [node name="Ticker" type="Timer" parent="."]
-pause_mode = 1
 
 [node name="LeftTimer" type="Timer" parent="."]
 

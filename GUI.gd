@@ -40,7 +40,7 @@ func clear_cells(node):
 
 func clear_all_cells():
 	clear_cells(grid)	
-	clear_cells(next)
+	#clear_cells(next)
 
 ###################### GAME STATE ######################
 func set_level(value):
@@ -80,15 +80,7 @@ func set_button_states(playing):
 	set_button_state("About", playing)
 	set_button_state("Pause", !playing)
 
-# Preview Next shape:
-func set_next_shape(shape: ShapeData):
-	clear_cells(next)
-	var i = 0
-	for col in shape.coors.size():
-		for row in [0, 1]:
-			if shape.grid[row][col]:
-				next.get_child(i).modulate = shape.color
-			i += 1
+
 
 ###################### BUTTON SIGNALS ######################
 func _on_NewGame_button_down():
