@@ -28,7 +28,12 @@ var music_position = 0.0
 # Grid variables
 var grid = []
 var cols
-#var blank_tile = TextureRect.new()
+
+#Texture Consts
+var fire_texture = "res://.import/fire.png-47470d6e7effe13e8b11cbe6509f7b76.stex"
+var water_texture = "res://.import/water.png-2f2e68a7019aae2aaad2eb35d95fe4b4.stex"
+var lightning_texture = "res://.import/lightning.png-8a07daa7487cffc9a3ca53a4a3d2b88b.stex"
+var plant_texture = "res://.import/plant.png-11cc93270e4fc2cb7562384c14cbca0c.stex"
 
 #Shape variables
 var shape: ShapeData
@@ -51,8 +56,6 @@ func _ready():
 	gui.set_button_states(ENABLED)
 	cols = gui.grid.get_columns()
 	gui.reset_stats()
-	#blank_tile.set_size(Vector2(64,64))
-	#blank_tile.texture = load("res://Art/Tiles/Blank.png")
 	load_game()
 	randomize()
 
