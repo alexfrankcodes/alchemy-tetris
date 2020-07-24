@@ -9,7 +9,7 @@
 
 [node name="GridContainer" type="GridContainer"]
 visible = false
-columns = 4
+columns = 8
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -87,9 +87,9 @@ margin_bottom = 132.0
 texture = ExtResource( 2 )
 
 [node name="domino_fire" type="GridContainer" parent="."]
-margin_top = 136.0
-margin_right = 200.0
-margin_bottom = 268.0
+margin_left = 816.0
+margin_right = 1016.0
+margin_bottom = 132.0
 columns = 2
 
 [node name="TextureRect2" type="TextureRect" parent="domino_fire"]
@@ -121,10 +121,9 @@ margin_bottom = 132.0
 texture = ExtResource( 3 )
 
 [node name="domino_water" type="GridContainer" parent="."]
-margin_left = 204.0
-margin_top = 136.0
-margin_right = 404.0
-margin_bottom = 268.0
+margin_left = 1020.0
+margin_right = 1220.0
+margin_bottom = 132.0
 columns = 2
 
 [node name="TextureRect2" type="TextureRect" parent="domino_water"]
@@ -159,10 +158,9 @@ __meta__ = {
 }
 
 [node name="domino_plant" type="GridContainer" parent="."]
-margin_left = 408.0
-margin_top = 136.0
-margin_right = 608.0
-margin_bottom = 268.0
+margin_left = 1224.0
+margin_right = 1424.0
+margin_bottom = 132.0
 columns = 2
 
 [node name="TextureRect2" type="TextureRect" parent="domino_plant"]
@@ -194,10 +192,9 @@ margin_bottom = 132.0
 texture = ExtResource( 5 )
 
 [node name="domino_lightning" type="GridContainer" parent="."]
-margin_left = 612.0
-margin_top = 136.0
-margin_right = 812.0
-margin_bottom = 268.0
+margin_left = 1428.0
+margin_right = 1628.0
+margin_bottom = 132.0
 columns = 2
 
 [node name="TextureRect2" type="TextureRect" parent="domino_lightning"]
@@ -229,9 +226,9 @@ margin_bottom = 132.0
 texture = ExtResource( 4 )
 
 [node name="tromino_fire" type="GridContainer" parent="."]
-margin_top = 272.0
+margin_top = 136.0
 margin_right = 200.0
-margin_bottom = 472.0
+margin_bottom = 336.0
 columns = 3
 
 [node name="TextureRect" type="TextureRect" parent="tromino_fire"]
@@ -299,9 +296,9 @@ texture = ExtResource( 2 )
 
 [node name="tromino_water" type="GridContainer" parent="."]
 margin_left = 204.0
-margin_top = 272.0
+margin_top = 136.0
 margin_right = 404.0
-margin_bottom = 472.0
+margin_bottom = 336.0
 columns = 3
 
 [node name="TextureRect" type="TextureRect" parent="tromino_water"]
@@ -369,9 +366,9 @@ texture = ExtResource( 2 )
 
 [node name="tromino_plant" type="GridContainer" parent="."]
 margin_left = 408.0
-margin_top = 272.0
+margin_top = 136.0
 margin_right = 608.0
-margin_bottom = 472.0
+margin_bottom = 336.0
 columns = 3
 
 [node name="TextureRect" type="TextureRect" parent="tromino_plant"]
@@ -439,9 +436,9 @@ texture = ExtResource( 2 )
 
 [node name="tromino_lightning" type="GridContainer" parent="."]
 margin_left = 612.0
-margin_top = 272.0
+margin_top = 136.0
 margin_right = 812.0
-margin_bottom = 472.0
+margin_bottom = 336.0
 columns = 3
 
 [node name="TextureRect" type="TextureRect" parent="tromino_lightning"]
@@ -500,6 +497,557 @@ margin_bottom = 200.0
 texture = ExtResource( 4 )
 
 [node name="TextureRect9" type="TextureRect" parent="tromino_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="L_fire" type="GridContainer" parent="."]
+margin_left = 816.0
+margin_top = 136.0
+margin_right = 1016.0
+margin_bottom = 336.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="L_fire"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect2" type="TextureRect" parent="L_fire"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect3" type="TextureRect" parent="L_fire"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="L_fire"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="L_fire"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect6" type="TextureRect" parent="L_fire"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="L_fire"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="L_fire"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect9" type="TextureRect" parent="L_fire"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="L_water" type="GridContainer" parent="."]
+margin_left = 1020.0
+margin_top = 136.0
+margin_right = 1220.0
+margin_bottom = 336.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="L_water"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect2" type="TextureRect" parent="L_water"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect3" type="TextureRect" parent="L_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="L_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="L_water"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect6" type="TextureRect" parent="L_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="L_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="L_water"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect9" type="TextureRect" parent="L_water"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="L_plant" type="GridContainer" parent="."]
+margin_left = 1224.0
+margin_top = 136.0
+margin_right = 1424.0
+margin_bottom = 336.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="L_plant"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect2" type="TextureRect" parent="L_plant"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect3" type="TextureRect" parent="L_plant"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="L_plant"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="L_plant"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect6" type="TextureRect" parent="L_plant"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="L_plant"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="L_plant"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect9" type="TextureRect" parent="L_plant"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="L_lightning" type="GridContainer" parent="."]
+margin_left = 1428.0
+margin_top = 136.0
+margin_right = 1628.0
+margin_bottom = 336.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="L_lightning"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect2" type="TextureRect" parent="L_lightning"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect3" type="TextureRect" parent="L_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect4" type="TextureRect" parent="L_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="L_lightning"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect6" type="TextureRect" parent="L_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="L_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="L_lightning"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect9" type="TextureRect" parent="L_lightning"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="L_fire2" type="GridContainer" parent="."]
+margin_top = 340.0
+margin_right = 200.0
+margin_bottom = 540.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="L_fire2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect2" type="TextureRect" parent="L_fire2"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect3" type="TextureRect" parent="L_fire2"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect4" type="TextureRect" parent="L_fire2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="L_fire2"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect6" type="TextureRect" parent="L_fire2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="L_fire2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="L_fire2"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect9" type="TextureRect" parent="L_fire2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="L_water2" type="GridContainer" parent="."]
+margin_left = 204.0
+margin_top = 340.0
+margin_right = 404.0
+margin_bottom = 540.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="L_water2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect2" type="TextureRect" parent="L_water2"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect3" type="TextureRect" parent="L_water2"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect4" type="TextureRect" parent="L_water2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="L_water2"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect6" type="TextureRect" parent="L_water2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="L_water2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="L_water2"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect9" type="TextureRect" parent="L_water2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="L_plant2" type="GridContainer" parent="."]
+margin_left = 408.0
+margin_top = 340.0
+margin_right = 608.0
+margin_bottom = 540.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="L_plant2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect2" type="TextureRect" parent="L_plant2"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect3" type="TextureRect" parent="L_plant2"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect4" type="TextureRect" parent="L_plant2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="L_plant2"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect6" type="TextureRect" parent="L_plant2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="L_plant2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="L_plant2"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect9" type="TextureRect" parent="L_plant2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="L_lightning2" type="GridContainer" parent="."]
+margin_left = 612.0
+margin_top = 340.0
+margin_right = 812.0
+margin_bottom = 540.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="L_lightning2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect2" type="TextureRect" parent="L_lightning2"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect3" type="TextureRect" parent="L_lightning2"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect4" type="TextureRect" parent="L_lightning2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="L_lightning2"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect6" type="TextureRect" parent="L_lightning2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect7" type="TextureRect" parent="L_lightning2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect8" type="TextureRect" parent="L_lightning2"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect9" type="TextureRect" parent="L_lightning2"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 136.0
 margin_top = 136.0

@@ -22,6 +22,9 @@ signal button_pressed(button_name)
 func _ready():
 	grid = find_node("Grid")
 	next = find_node("NextBlock")
+	find_node("Play").hide()
+	find_node("Music_Off").hide()
+	find_node("Sound_Off").hide()
 	generate_cells(grid, GRID_SIZE)
 	clear_all_cells()
 
@@ -41,19 +44,19 @@ func clear_all_cells():
 
 ###################### GAME STATE ######################
 func set_level(value):
-	find_node("Level").text = str(value)
+	#find_node("Level").text = str(value)
 	level = value
 
 func set_score(value):
-	find_node("Score").text = str(value)
+	#find_node("Score").text = str(value)
 	score = value
 
 func set_high_score(value):
-	find_node("HighScore").text = "%08d" % value
+	#find_node("HighScore").text = "%08d" % value
 	high_score = value
 
 func set_lines(value):
-	find_node("Lines").text = str(value)
+	#find_node("Lines").text = str(value)
 	lines = value
 
 func reset_stats(_high_score = 0, _score = 0, _lines = 0, _level = 1):
@@ -79,7 +82,7 @@ func set_button_states(playing):
 
 
 
-###################### SIGNALS ######################
+###################### BUTTON SIGNALS ######################
 func _on_NewGame_button_down():
 	emit_signal("button_pressed", "NewGame")
 
@@ -97,5 +100,32 @@ func _on_MusicToggle_pressed():
 func _on_AboutBox_popup_hide():
 	set_button_state("About", false)
 
-func _on_Pause_button_down():
+
+func _on_Pause_button_up():
+	find_node("Pause").hide()
+	find_node("Play").show()
 	emit_signal("button_pressed", "Pause")
+
+func _on_Play_button_up():
+	find_node("Play").hide()
+	find_node("Pause").show()
+	emit_signal("button_pressed", "Pause")
+
+func _on_Music_button_up():
+	find_node("Music").hide()
+	find_node("Music_Off").show()
+	emit_signal("button_pressed", "Music")
+
+func _on_Music_Off_button_up():
+	find_node("Music_Off").hide()
+	find_node("Music").show()
+	emit_signal("button_pressed", "Music")
+
+func _on_Sound_button_up():
+	find_node("Sound").hide()
+	find_node("Sound_Off").show()
+	emit_signal("button_pressed", "Sound")
+
+func _on_Sound_Off_button_up():
+	find_node("Sound_Off").hide()
+	find_node("Sound").show()

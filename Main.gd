@@ -6,7 +6,8 @@ enum { ROTATE_LEFT, ROTATE_RIGHT }
 const DISABLED = true
 const ENABLED = false
 const MAX_LEVEL = 100
-const END_POS = 10
+const START_POS = 5
+const END_POS =  25
 const TICK_SPEED = 1.5
 const FAST_MULTIPLE = 10
 const WAIT_TIME = 0.15
@@ -127,13 +128,13 @@ func add_to_score(rows):
 		for n in range(row*10, (grid.size() - ((10%(row+1))*10))):
 			var square = gui.grid.get_child(n)
 			# Check each square and calculate score appropriately
-			if(square.texture.load_path == fire_texture):
+			if(square.texture.load_path == fire_texture && fire_score < 100):
 				fire_score += 1
-			if(square.texture.load_path == water_texture):
+			if(square.texture.load_path == water_texture && water_score < 100):
 				water_score += 1
-			if(square.texture.load_path == lightning_texture):
+			if(square.texture.load_path == lightning_texture && lightning_score < 100):
 				lightning_score += 1
-			if(square.texture.load_path == plant_texture):
+			if(square.texture.load_path == plant_texture && plant_score < 100):
 				plant_score += 1
 		gui.find_node("FireProgress").value = fire_score
 		gui.find_node("WaterProgress").value = water_score
@@ -173,7 +174,6 @@ func _button_pressed(button_name):
 			# copy gui.music value to data
 			if state == PLAYING:
 				if _music_is_on():
-					print("Music changed. Level: %d" % gui.music)
 					_music(PLAY)
 				else:
 					_music(STOP)
@@ -181,10 +181,9 @@ func _button_pressed(button_name):
 		"Sound":
 			# copy gui.sound value to data
 			if _sound_is_on():
-				$SoundPlayer.volume_db = gui.sound
-				print("Sound changed. Level: %d" % gui.sound)
+				$SoundPlayer.play()	
 			else:
-				print("Sound off")
+				$SoundPlayer.stop()
 		
 		"About":
 			gui.set_button_state("About", DISABLED)
@@ -238,7 +237,7 @@ func hard_drop():
 ###################### SHAPE ######################
 func new_shape():
 	shape = Shapes.get_shape()
-	pos = rng.randi_range(0,20)
+	pos = rng.randi_range(1,8)
 	add_shape_to_grid()
 	normal_drop()
 	level_up()
@@ -308,7 +307,6 @@ func move_right():
 
 func _music(action):
 	if action == PLAY:
-		$MusicPlayer.volume_db = gui.music
 		if !$MusicPlayer.is_playing():
 			$MusicPlayer.play(music_position)
 	else:
