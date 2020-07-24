@@ -6,9 +6,8 @@ enum { ROTATE_LEFT, ROTATE_RIGHT }
 const DISABLED = true
 const ENABLED = false
 const MAX_LEVEL = 100
-const START_POS = 5
-const END_POS = 25
-const TICK_SPEED = 1.0
+const END_POS = 10
+const TICK_SPEED = 1.5
 const FAST_MULTIPLE = 10
 const WAIT_TIME = 0.15
 const REPEAT_DELAY = 0.05
@@ -317,10 +316,10 @@ func _music(action):
 		$MusicPlayer.stop()
 
 func _music_is_on():
-	return gui.music > gui.min_vol
+	return gui.music
 
 func _sound_is_on():
-	return gui.sound > gui.min_vol
+	return gui.sound
 
 
 ###################### TICKERS ######################

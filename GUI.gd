@@ -22,8 +22,6 @@ signal button_pressed(button_name)
 func _ready():
 	grid = find_node("Grid")
 	next = find_node("NextBlock")
-	min_vol = find_node("Music").get_min()
-	find_node("Sound").set_min(min_vol)
 	generate_cells(grid, GRID_SIZE)
 	clear_all_cells()
 
@@ -66,8 +64,6 @@ func reset_stats(_high_score = 0, _score = 0, _lines = 0, _level = 1):
 
 func settings(data):
 	self.high_score = data.high_score
-	find_node("Music").value = data.music
-	find_node("Sound").value = data.sound
 
 ###################### BUTTON MUTATORS ######################
 func set_button_state(button, state):
