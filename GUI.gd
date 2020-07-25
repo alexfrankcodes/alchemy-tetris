@@ -27,6 +27,7 @@ func _ready():
 	find_node("Sound_Off").hide()
 	generate_cells(grid, GRID_SIZE)
 	clear_all_cells()
+	$WelcomeBox.popup_centered()
 
 func generate_cells(node, n):
 	var num_cells = node.get_child_count()
@@ -73,6 +74,12 @@ func reset_stats(_high_score = 0, _score = 0, _lines = 0, _level = 1):
 
 func settings(data):
 	self.high_score = data.high_score
+	
+func lose():
+	$LoseBox.popup_centered()	
+
+func win():
+	$WinBox.popup_centered()		
 
 ###################### BUTTON MUTATORS ######################
 func set_button_state(button, state):
@@ -90,6 +97,7 @@ func set_button_states(playing):
 ###################### BUTTON SIGNALS ######################
 func _on_NewGame_button_up():
 	emit_signal("button_pressed", "NewGame")
+	$HBoxContainer/Right/Buttons/NewGame.release_focus()
 
 func _on_About_button_down():
 	$AboutBox.popup_centered()

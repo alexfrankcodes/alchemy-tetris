@@ -49,7 +49,7 @@ var water_score = 0
 var lightning_score = 0
 var plant_score = 0
 var total_score = 0
-
+var win = false
 
 ###################### SETUP ######################
 func _ready():
@@ -113,6 +113,11 @@ func _game_over():
 		background_sound.play()
 	state = STOPPED
 	gui.clear_all_cells()
+	if(win):
+		gui.win()
+	else:
+		gui.lose()
+	
 	
 
 
@@ -137,13 +142,13 @@ func add_to_score(rows):
 			var square = gui.grid.get_child(n)
 			# Check each square and calculate score appropriately
 			if(square.texture.load_path == fire_texture && fire_score < 100):
-				fire_score += 1
+				fire_score += 100
 			if(square.texture.load_path == water_texture && water_score < 100):
-				water_score += 1
+				water_score += 100
 			if(square.texture.load_path == lightning_texture && lightning_score < 100):
-				lightning_score += 1
+				lightning_score += 100
 			if(square.texture.load_path == plant_texture && plant_score < 100):
-				plant_score += 1
+				plant_score += 100
 		gui.find_node("FireProgress").value = fire_score
 		gui.find_node("WaterProgress").value = water_score
 		gui.find_node("LightningProgress").value = lightning_score
@@ -153,6 +158,11 @@ func add_to_score(rows):
 	gui.score += total_score
 	gui.find_node("MainProgress").value = total_score
 	update_high_score()
+	
+	if total_score == 400:
+		win = true
+		_game_over()
+	
 
 func update_high_score():
 	if gui.score > gui.high_score:

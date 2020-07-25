@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Art/Tiles/Blank.png" type="Texture" id=1]
 [ext_resource path="res://GUI.gd" type="Script" id=2]
@@ -40,6 +40,9 @@
 [ext_resource path="res://Art/controls.png" type="Texture" id=38]
 [ext_resource path="res://Art/about.png" type="Texture" id=39]
 [ext_resource path="res://Art/Icons/New_Game_Pressed.png" type="Texture" id=40]
+[ext_resource path="res://Art/welcome.png" type="Texture" id=41]
+[ext_resource path="res://Art/win.png" type="Texture" id=42]
+[ext_resource path="res://Art/lose.png" type="Texture" id=43]
 
 [node name="GUI" type="CenterContainer"]
 light_mask = 0
@@ -387,6 +390,42 @@ position = Vector2( 0, -26 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 1
 texture = ExtResource( 39 )
+
+[node name="WinBox" type="PopupPanel" parent="."]
+margin_left = 796.0
+margin_top = 445.0
+margin_right = 804.0
+margin_bottom = 453.0
+
+[node name="win" type="Sprite" parent="WinBox"]
+position = Vector2( 0, -17 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+texture = ExtResource( 42 )
+
+[node name="LoseBox" type="PopupPanel" parent="."]
+margin_left = 796.0
+margin_top = 445.0
+margin_right = 804.0
+margin_bottom = 453.0
+
+[node name="lose" type="Sprite" parent="LoseBox"]
+position = Vector2( 53, 23.7991 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+texture = ExtResource( 43 )
+
+[node name="WelcomeBox" type="PopupPanel" parent="."]
+margin_left = 796.0
+margin_top = 445.0
+margin_right = 804.0
+margin_bottom = 453.0
+
+[node name="welcome" type="Sprite" parent="WelcomeBox"]
+position = Vector2( 8, -1.57788 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+texture = ExtResource( 41 )
 [connection signal="button_up" from="HBoxContainer/Right/Buttons/NewGame" to="." method="_on_NewGame_button_up"]
 [connection signal="ready" from="HBoxContainer/Right/Buttons/NewGame" to="." method="_on_NewGame_ready"]
 [connection signal="button_down" from="HBoxContainer/Right/Buttons/Pause" to="." method="_on_Pause_button_down"]
