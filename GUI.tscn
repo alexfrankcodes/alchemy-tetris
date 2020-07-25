@@ -411,7 +411,7 @@ margin_right = 804.0
 margin_bottom = 453.0
 
 [node name="lose" type="Sprite" parent="LoseBox"]
-position = Vector2( 53, 23.7991 )
+position = Vector2( 3, 23.7991 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 1
 texture = ExtResource( 43 )
@@ -427,7 +427,7 @@ position = Vector2( 8, -1.57788 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 1
 texture = ExtResource( 41 )
-[connection signal="button_up" from="HBoxContainer/Right/Buttons/NewGame" to="." method="_on_NewGame_button_up"]
+[connection signal="pressed" from="HBoxContainer/Right/Buttons/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="ready" from="HBoxContainer/Right/Buttons/NewGame" to="." method="_on_NewGame_ready"]
 [connection signal="button_down" from="HBoxContainer/Right/Buttons/Pause" to="." method="_on_Pause_button_down"]
 [connection signal="button_up" from="HBoxContainer/Right/Buttons/Pause" to="." method="_on_Pause_button_up"]

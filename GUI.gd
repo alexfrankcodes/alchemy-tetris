@@ -84,6 +84,7 @@ func win():
 ###################### BUTTON MUTATORS ######################
 func set_button_state(button, state):
 	find_node(button).set_disabled(state)
+	find_node(button).release_focus()
 	
 func set_button_text(button, text):
 	find_node(button).set_text(text)
@@ -95,10 +96,6 @@ func set_button_states(playing):
 
 
 ###################### BUTTON SIGNALS ######################
-func _on_NewGame_button_up():
-	emit_signal("button_pressed", "NewGame")
-	$HBoxContainer/Right/Buttons/NewGame.release_focus()
-
 func _on_About_button_down():
 	$AboutBox.popup_centered()
 	emit_signal("button_pressed", "About")
@@ -143,3 +140,7 @@ func _on_Sound_Off_button_up():
 	find_node("Sound_Off").hide()
 	find_node("Sound").show()
 	emit_signal("button_pressed", "Sound")
+
+
+func _on_NewGame_pressed():
+	emit_signal("button_pressed", "NewGame")

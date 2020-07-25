@@ -12,6 +12,7 @@ const TICK_SPEED = 1.5
 const FAST_MULTIPLE = 10
 const WAIT_TIME = 0.15
 const REPEAT_DELAY = 0.05
+const SCORE_INCREMENT = 100
 const FILE_NAME = "user://tetron.json"
 
 # Sound variables
@@ -111,6 +112,10 @@ func load_game():
 		gui.settings(data)
 
 func _game_over():
+	if(win):
+		gui.win()
+	if(lose):
+		gui.lose()
 	$Ticker.stop()
 	$LeftTimer.stop()
 	$RightTimer.stop()
@@ -121,10 +126,7 @@ func _game_over():
 		background_sound.play()
 	state = STOPPED
 	gui.clear_all_cells()
-	if(win):
-		gui.win()
-	if(lose):
-		gui.lose()
+	
 
 
 ###################### LEVELING SYSTEM ######################
@@ -148,26 +150,31 @@ func add_to_score(rows):
 			var square = gui.grid.get_child(n)
 			# Check each square and calculate score appropriately
 			if(square.texture.load_path == fire_texture && fire_score < 100):
-				fire_score += 2
+				fire_score += SCORE_INCREMENT
 			if(square.texture.load_path == water_texture && water_score < 100):
-				water_score += 2
+				water_score += SCORE_INCREMENT
 			if(square.texture.load_path == lightning_texture && lightning_score < 100):
-				lightning_score += 2
+				lightning_score += SCORE_INCREMENT
 			if(square.texture.load_path == plant_texture && plant_score < 100):
-				plant_score += 2
+				plant_score += SCORE_INCREMENT
 		gui.find_node("FireProgress").value = fire_score
 		gui.find_node("WaterProgress").value = water_score
 		gui.find_node("LightningProgress").value = lightning_score
 		gui.find_node("PlantProgress").value = plant_score
 	
-	total_score = fire_score + plant_score + lightning_score + water_score
+	var temp_score = fire_score + plant_score + lightning_score + water_score
+	if temp_score < 400:
+		total_score = temp_score
+	else:
+		total_score = 400
+		win = true
 	gui.score += total_score
 	gui.find_node("MainProgress").value = total_score
 	update_high_score()
+	if win:
+		$Ticker.stop()
 	
-	if total_score == 400:
-		win = true
-		_game_over()
+
 	
 
 func update_high_score():
@@ -348,6 +355,8 @@ func _on_Ticker_timeout():
 	if move_shape(new_pos):
 		gui.score += bonus
 		update_high_score()
+		if win:
+			_game_over()
 	else:
 		if new_pos <= END_POS:
 			lose = true
