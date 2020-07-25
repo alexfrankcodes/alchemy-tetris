@@ -62,8 +62,14 @@ func set_lines(value):
 func reset_stats(_high_score = 0, _score = 0, _lines = 0, _level = 1):
 	self.high_score = _high_score
 	self.score = _score
+	self.find_node("FireProgress").value = _score
+	self.find_node("WaterProgress").value = _score
+	self.find_node("LightningProgress").value = _score
+	self.find_node("PlantProgress").value = _score
+	self.find_node("MainProgress").value = _score
 	self.lines = _lines
 	self.level = _level
+	
 
 func settings(data):
 	self.high_score = data.high_score
@@ -77,13 +83,12 @@ func set_button_text(button, text):
 
 func set_button_states(playing):
 	set_button_state("NewGame", playing)
-	set_button_state("About", playing)
 	set_button_state("Pause", !playing)
 
 
 
 ###################### BUTTON SIGNALS ######################
-func _on_NewGame_button_down():
+func _on_NewGame_button_up():
 	emit_signal("button_pressed", "NewGame")
 
 func _on_About_button_down():
@@ -129,3 +134,4 @@ func _on_Sound_button_up():
 func _on_Sound_Off_button_up():
 	find_node("Sound_Off").hide()
 	find_node("Sound").show()
+	emit_signal("button_pressed", "Sound")

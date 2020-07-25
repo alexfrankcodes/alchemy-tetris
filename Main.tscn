@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Background.png" type="Texture" id=3]
+[ext_resource path="res://Sound/rotate_right.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sound/rotate_left.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sound/block_movement.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sound/bubbling.wav" type="AudioStream" id=7]
 
 [node name="Main" type="CenterContainer"]
 margin_left = 1.05945
@@ -13,19 +17,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
-
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 pause_mode = 2
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 585.0
-margin_top = 119.0
-margin_right = 1015.0
-margin_bottom = 779.0
+margin_left = 435.0
+margin_top = 120.0
+margin_right = 1165.0
+margin_bottom = 780.0
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -41,6 +41,25 @@ grow_vertical = 0
 scale = Vector2( 0.2, 0.199111 )
 texture = ExtResource( 3 )
 centered = false
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="RotSoundL" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 5 )
+
+[node name="RotSoundR" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 4 )
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 6 )
+volume_db = -5.0
+pitch_scale = 0.87
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
 [connection signal="timeout" from="Ticker" to="." method="_on_Ticker_timeout"]
 [connection signal="timeout" from="LeftTimer" to="." method="_on_LeftTimer_timeout"]
 [connection signal="timeout" from="RightTimer" to="." method="_on_RightTimer_timeout"]
+[connection signal="finished" from="Audio/SoundPlayer" to="." method="_on_SoundPlayer_finished"]

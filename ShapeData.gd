@@ -7,16 +7,13 @@ var grid: Array
 var coors: Array
 var texture: Texture
 
-
 func rotate_left():
-	rotate_grid(-1, 1)
-
+	_rotate_grid(-1, 1)
 
 func rotate_right():
-	rotate_grid(1, -1)
+	_rotate_grid(1, -1)
 
-
-func rotate_grid(sign_of_x, sign_of_y):
+func _rotate_grid(sign_of_x, sign_of_y):
 	var rotated_grid = grid.duplicate(true)
 	for x in coors:
 		for y in coors:

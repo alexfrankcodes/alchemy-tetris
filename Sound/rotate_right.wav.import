@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rotate_right.wav-974014f635f6d02076e0222111c57496.sample"
+
+[deps]
+
+source_file="res://Sound/rotate_right.wav"
+dest_files=[ "res://.import/rotate_right.wav-974014f635f6d02076e0222111c57496.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
