@@ -50,6 +50,7 @@ var lightning_score = 0
 var plant_score = 0
 var total_score = 0
 var win = false
+var lose = false
 
 ###################### SETUP ######################
 func _ready():
@@ -79,6 +80,13 @@ func _start_game():
 	clear_grid()
 	gui.reset_stats(gui.high_score)
 	new_shape()
+	fire_score = 0
+	water_score = 0
+	lightning_score = 0
+	plant_score = 0
+	total_score = 0
+	win = false
+	lose = false
 
 func pause(value = true):
 	get_tree().paused = value
@@ -115,10 +123,8 @@ func _game_over():
 	gui.clear_all_cells()
 	if(win):
 		gui.win()
-	else:
+	if(lose):
 		gui.lose()
-	
-	
 
 
 ###################### LEVELING SYSTEM ######################
@@ -142,13 +148,13 @@ func add_to_score(rows):
 			var square = gui.grid.get_child(n)
 			# Check each square and calculate score appropriately
 			if(square.texture.load_path == fire_texture && fire_score < 100):
-				fire_score += 100
+				fire_score += 2
 			if(square.texture.load_path == water_texture && water_score < 100):
-				water_score += 100
+				water_score += 2
 			if(square.texture.load_path == lightning_texture && lightning_score < 100):
-				lightning_score += 100
+				lightning_score += 2
 			if(square.texture.load_path == plant_texture && plant_score < 100):
-				plant_score += 100
+				plant_score += 2
 		gui.find_node("FireProgress").value = fire_score
 		gui.find_node("WaterProgress").value = water_score
 		gui.find_node("LightningProgress").value = lightning_score
@@ -344,6 +350,7 @@ func _on_Ticker_timeout():
 		update_high_score()
 	else:
 		if new_pos <= END_POS:
+			lose = true
 			_game_over()
 		else:
 			lock_shape_to_grid()
@@ -408,8 +415,6 @@ func remove_rows(rows):
 				to -= 1
 			rows_moved += 1
 		add_shape_to_grid()
-
-
 
 func _on_SoundPlayer_finished():
 	if(_sound_is_on()):
