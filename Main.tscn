@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://Sound/rotate_right.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sound/rotate_left.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sound/block_movement.wav" type="AudioStream" id=6]
-[ext_resource path="res://Sound/bubbling.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sound/music.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Sound/lose.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sound/win.wav" type="AudioStream" id=9]
 
 [node name="Main" type="CenterContainer"]
 margin_left = 1.05945
@@ -45,6 +47,8 @@ centered = false
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="Audio"]
+pause_mode = 2
+stream = ExtResource( 7 )
 
 [node name="RotSoundL" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 5 )
@@ -57,9 +61,11 @@ stream = ExtResource( 6 )
 volume_db = -5.0
 pitch_scale = 0.87
 
-[node name="SoundPlayer" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 7 )
+[node name="Win" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 9 )
+
+[node name="Lose" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
 [connection signal="timeout" from="Ticker" to="." method="_on_Ticker_timeout"]
 [connection signal="timeout" from="LeftTimer" to="." method="_on_LeftTimer_timeout"]
 [connection signal="timeout" from="RightTimer" to="." method="_on_RightTimer_timeout"]
-[connection signal="finished" from="Audio/SoundPlayer" to="." method="_on_SoundPlayer_finished"]

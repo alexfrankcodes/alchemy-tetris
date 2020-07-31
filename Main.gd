@@ -8,18 +8,21 @@ const ENABLED = false
 const MAX_LEVEL = 100
 const START_POS = 5
 const END_POS =  25
-const TICK_SPEED = 1.5
+const TICK_SPEED = 1.2
 const FAST_MULTIPLE = 10
 const WAIT_TIME = 0.15
 const REPEAT_DELAY = 0.05
-const SCORE_INCREMENT = 100
+const SCORE_INCREMENT = 2
 const FILE_NAME = "user://tetron.json"
 
 # Sound variables
+var sound = true
+var music = true
 onready var rotate_left_sound = $Audio/RotSoundL
 onready var rotate_right_sound = $Audio/RotSoundR
-onready var background_sound = $Audio/SoundPlayer
-
+onready var win_sound = $Audio/Win
+onready var lose_sound = $Audio/Lose
+onready var music_player = $Audio/MusicPlayer
 
 # Game variables
 var gui
@@ -75,9 +78,6 @@ func clear_grid():
 func _start_game():
 	state = PLAYING
 	music_position = 0.0
-	background_sound.play()
-	if _music_is_on():
-		_music(PLAY)
 	clear_grid()
 	gui.reset_stats(gui.high_score)
 	new_shape()
@@ -88,6 +88,8 @@ func _start_game():
 	total_score = 0
 	win = false
 	lose = false
+	if music:
+		music_player.play()
 
 func pause(value = true):
 	get_tree().paused = value
@@ -112,18 +114,16 @@ func load_game():
 		gui.settings(data)
 
 func _game_over():
-	if(win):
-		gui.win()
 	if(lose):
 		gui.lose()
+		if sound:
+			lose_sound.play()
 	$Ticker.stop()
 	$LeftTimer.stop()
 	$RightTimer.stop()
 	gui.set_button_states(ENABLED)
 	if _music_is_on():
 		_music(STOP)
-	if _sound_is_on():
-		background_sound.play()
 	state = STOPPED
 	gui.clear_all_cells()
 	
@@ -137,7 +137,7 @@ func level_up():
 
 func increase_level():
 	if gui.level < MAX_LEVEL:
-		gui.level += 0.5
+		gui.level += 0.3
 		$Ticker.set_wait_time(TICK_SPEED / gui.level)
 
 ###################### SCORING SYSTEM ######################
@@ -168,11 +168,16 @@ func add_to_score(rows):
 	else:
 		total_score = 400
 		win = true
+		gui.win()
+		if sound:
+			win_sound.play()
+		gui.clear_all_cells()
+		$Ticker.stop()
 	gui.score += total_score
 	gui.find_node("MainProgress").value = total_score
 	update_high_score()
-	if win:
-		$Ticker.stop()
+
+		
 	
 
 	
@@ -193,27 +198,29 @@ func _button_pressed(button_name):
 			if state == PLAYING:
 				state = PAUSED
 				pause(true) 
-				if _music_is_on():
-					_music(PAUSE)
+				if music:
+					music_position = music_player.get_playback_position()
+					music_player.stop()
+					music = false
 			else:
 				state = PLAYING
 				pause(false)
-				if _music_is_on():
-					_music(PLAY)
+				if music == false:
+					music_player.play(music_position)
+					music = true
 		
 		"Music":
-			if state == PLAYING:
-				if _music_is_on():
-					_music(PLAY)
-				else:
-					_music(STOP)
+			if music:
+				music_position = music_player.get_playback_position()
+				music_player.stop()
+			else:
+				music_player.play(music_position)
+			music = !music
+			
 		
 		"Sound":
-			if _sound_is_on():
-				background_sound.play()	
-			else:
-				background_sound.stop()		
-
+			sound = !sound
+			
 func _input(event):
 	if state == PLAYING:
 		if event.is_action_pressed("ui_page_up"):
@@ -316,11 +323,13 @@ func rotate(dir):
 		ROTATE_LEFT:
 			shape.rotate_left()
 			dir = ROTATE_RIGHT
-			rotate_right_sound.play()
+			if sound:
+				rotate_right_sound.play()
 		ROTATE_RIGHT:
 			shape.rotate_left()
 			dir = ROTATE_LEFT
-			rotate_left_sound.play()
+			if sound:
+				rotate_left_sound.play()
 	return dir
 
 func move_left():
@@ -345,8 +354,7 @@ func _music_is_on():
 	return gui.music
 
 func _sound_is_on():
-	return gui.sound > 0
-
+	return sound
 
 ###################### TICKERS ######################
 
@@ -402,8 +410,6 @@ func remove_rows(rows):
 		var rows_moved = 0
 		add_to_score(rows)
 		pause()
-		if _sound_is_on():
-			background_sound.play()
 		yield(get_tree().create_timer(0.3), "timeout")
 		pause(false)
 		remove_shape_from_grid()
@@ -425,6 +431,3 @@ func remove_rows(rows):
 			rows_moved += 1
 		add_shape_to_grid()
 
-func _on_SoundPlayer_finished():
-	if(_sound_is_on()):
-		background_sound.play()

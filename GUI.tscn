@@ -387,7 +387,7 @@ margin_right = 804.0
 margin_bottom = 453.0
 
 [node name="about" type="Sprite" parent="AboutBox"]
-position = Vector2( 0, -26 )
+position = Vector2( 3.57959, -2.57776 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 1
 texture = ExtResource( 39 )
@@ -400,7 +400,7 @@ margin_bottom = 453.0
 
 [node name="win" type="Sprite" parent="WinBox"]
 position = Vector2( 0, -17 )
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.36, 0.36 )
 z_index = 1
 texture = ExtResource( 42 )
 
